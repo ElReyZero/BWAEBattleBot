@@ -1,0 +1,16 @@
+__pycache__/
+*/__pycache__/
+permissions.txt
+bot/google_api_secret.json
+secret/
+logging/
+matches/
+venv/
+commands/running
+.vscode/
+.idea/
+doc/build/
+*.diff
+bot/config_test_rey.cfg
+bot/modules/config_rey.py
+.python-version

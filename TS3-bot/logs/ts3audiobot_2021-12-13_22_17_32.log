@@ -1,0 +1,17 @@
+2021-12-13 22:17:32.2565| INFO|Core|Setup.LogHeader [============ TS3AudioBot started =============]
+2021-12-13 22:17:32.2892| INFO|Core|Setup.LogHeader [ Date: Monday, 13 December 2021 22:17:32
+2021-12-13 22:17:32.3024| INFO|Core|Setup.LogHeader [ Version: 0.12.2/master/4c6be036
+2021-12-13 22:17:32.3024| INFO|Core|Setup.LogHeader [ Build: Release
+2021-12-13 22:17:32.3024| INFO|Core|Setup.LogHeader [ Platform: Windows 6.2.9200.0 (64bit)
+2021-12-13 22:17:32.3024| INFO|Core|Setup.LogHeader [ Runtime: .NET Core (3.1.21) ServerGC:True GC:SustainedLowLatency
+2021-12-13 22:17:32.3087| INFO|Core|Setup.LogHeader [ Opus: libopus 1.2.1-fixed (x64)
+2021-12-13 22:17:32.3087| INFO|Core|Setup.LogHeader [==============================================]
+2021-12-13 22:17:32.6825| INFO|Core|WebServer.StartWebServerInternal Starting Webserver on port 58913
+2021-12-13 22:17:32.8545| INFO|Core|Bot.Run Bot "1" connecting to "ts.bushidoway.net"
+2021-12-13 22:17:36.3568| INFO|Core|Ts3Client.ConnectClient Client connected.
+2021-12-13 22:18:38.2081| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/subscribe/channel/49)
+2021-12-13 22:18:38.2081| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/subscribe/channel/77/80)
+2021-12-13 22:18:38.2569|ERROR|Api|RightsManager.ReadFile <ip> Field value '::1:localhost' could not be parsed.
+2021-12-13 22:18:38.2569|ERROR|Api|RightsManager.ReadFile <ip> Field value '::1:localhost' could not be parsed.
+2021-12-13 22:18:38.3031| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/xecute(/add/drop_match_1_picks.mp3)(/play))
+2021-12-13 22:18:38.3133|ERROR|Api|RightsManager.ReadFile <ip> Field value '::1:localhost' could not be parsed.

@@ -1,0 +1,20 @@
+2021-12-13 18:10:24.7697| INFO|Core|Setup.LogHeader [============ TS3AudioBot started =============]
+2021-12-13 18:10:24.7995| INFO|Core|Setup.LogHeader [ Date: Monday, 13 December 2021 18:10:24
+2021-12-13 18:10:24.8134| INFO|Core|Setup.LogHeader [ Version: 0.12.2/master/4c6be036
+2021-12-13 18:10:24.8134| INFO|Core|Setup.LogHeader [ Build: Release
+2021-12-13 18:10:24.8134| INFO|Core|Setup.LogHeader [ Platform: Windows 6.2.9200.0 (64bit)
+2021-12-13 18:10:24.8134| INFO|Core|Setup.LogHeader [ Runtime: .NET Core (3.1.21) ServerGC:True GC:SustainedLowLatency
+2021-12-13 18:10:24.8134| INFO|Core|Setup.LogHeader [ Opus: libopus 1.2.1-fixed (x64)
+2021-12-13 18:10:24.8134| INFO|Core|Setup.LogHeader [==============================================]
+2021-12-13 18:10:25.1762| INFO|Core|WebServer.StartWebServerInternal Starting Webserver on port 58913
+2021-12-13 18:10:25.3630| INFO|Core|Bot.Run Bot "1" connecting to "ts.bushidoway.net"
+2021-12-13 18:10:28.7680| INFO|Core|Ts3Client.ConnectClient Client connected.
+2021-12-13 18:10:43.8790| INFO|0|Bot.OnMessageReceived User ElReyZero requested: !play lobby_full.mp3
+2021-12-13 18:10:44.0124|ERROR|0|FfmpegProducer.StartFfmpegProcessInternal Ffmpeg could not be found (El sistema no puede encontrar el archivo especificado.)
+System.ComponentModel.Win32Exception (2): El sistema no puede encontrar el archivo especificado.
+   at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start()
+   at TS3AudioBot.Audio.FfmpegProducer.StartFfmpegProcessInternal(FfmpegInstance instance, String arguments) in D:\Users\Juan PC\Downloads\TS3AudioBot\TS3AudioBot\Audio\FfmpegProducer.cs:line 282
+2021-12-13 18:10:58.3300| INFO|0|Bot.OnMessageReceived User ElReyZero requested: !play lobby_full.mp3
+2021-12-13 18:10:59.4577| WARN|0|Util.UnwrapToLog file_invalid_path: the command failed to execute: invalid file path
+2021-12-13 18:11:01.4255| INFO|0|PlayManager.StopInternal Song queue ended: No next song could be played.

@@ -1,0 +1,27 @@
+2021-12-18 15:15:30.3785| INFO|Core|Setup.LogHeader [============ TS3AudioBot started =============]
+2021-12-18 15:15:30.4051| INFO|Core|Setup.LogHeader [ Date: Saturday, 18 December 2021 15:15:30
+2021-12-18 15:15:30.4465| INFO|Core|Setup.LogHeader [ Version: <?>/<?>/<?>
+2021-12-18 15:15:30.4475| INFO|Core|Setup.LogHeader [ Build: <?>
+2021-12-18 15:15:30.4483| INFO|Core|Setup.LogHeader [ Platform: Ubuntu 20.04.3 LTS (Focal Fossa) (64bit)
+2021-12-18 15:15:30.4483| INFO|Core|Setup.LogHeader [ Runtime: .NET Core (3.1.21) ServerGC:True GC:SustainedLowLatency
+2021-12-18 15:15:30.4500| INFO|Core|Setup.LogHeader [ Opus: libopus 1.3.1 (x64)
+2021-12-18 15:15:30.4506| INFO|Core|Setup.LogHeader [==============================================]
+2021-12-18 15:15:30.7531| INFO|Core|WebServer.StartWebServerInternal Starting Webserver on port 58913
+2021-12-18 15:15:30.8838| INFO|Core|Bot.Run Bot "1" connecting to "ts.bushidoway.net"
+2021-12-18 15:15:33.7305| INFO|Core|Ts3Client.ConnectClient Client connected.
+2021-12-18 15:16:16.7846| INFO|Api|WebApi.ProcessApiV1Call ::ffff:127.0.0.1 Requested: /api/bot/template/1(/subscribe/channel/49)
+2021-12-18 15:16:16.7846| INFO|Api|WebApi.ProcessApiV1Call ::ffff:127.0.0.1 Requested: /api/bot/template/1(/subscribe/channel/77/80)
+2021-12-18 15:16:16.8653| INFO|Api|WebApi.ProcessApiV1Call ::ffff:127.0.0.1 Requested: /api/bot/template/1(/xecute(/add/drop_match_1_picks.mp3)(/play))
+2021-12-18 15:16:25.0366| INFO|0|PlayManager.StopInternal Song queue ended: No next song could be played.
+2021-12-18 15:17:05.5706| INFO|Api|WebApi.ProcessApiV1Call ::ffff:127.0.0.1 Requested: /api/bot/template/1(/unsubscribe/channel/49)
+2021-12-18 15:17:05.5792| INFO|Api|WebApi.ProcessApiV1Call ::ffff:127.0.0.1 Requested: /api/bot/template/1(/xecute(/add/select_teams.mp3)(/play))
+2021-12-18 15:17:07.6356| INFO|0|PlayManager.StopInternal Song queue ended: No next song could be played.
+2021-12-18 15:17:13.1556| INFO|Api|WebApi.ProcessApiV1Call ::ffff:127.0.0.1 Requested: /api/bot/template/1(/xecute(/add/select_factions.mp3)(/play))
+2021-12-18 15:17:15.1773| INFO|0|PlayManager.StopInternal Song queue ended: No next song could be played.
+2021-12-18 15:21:10.2429| INFO|0|Bot.OnMessageReceived User ElReyZero requested: !play gelos_in_prison.mp3
+2021-12-18 15:21:10.3364| INFO||Core.ConsoleInterruptHandler Got interrupt signal, trying to soft-exit.
+2021-12-18 15:21:10.3386| INFO||Core.StopAsync TS3AudioBot shutting down.
+2021-12-18 15:21:10.3413| INFO||Bot.Stop Bot (0) disconnecting.
+2021-12-18 15:21:10.4327| INFO||WebServer.Dispose WebServer is closing
+2021-12-18 15:21:10.4343| INFO|Core|WebServer.OnShutdown WebServer has closed
+2021-12-18 15:21:10.4361| INFO||Core.StopAsync Bye

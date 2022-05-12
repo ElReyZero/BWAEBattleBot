@@ -1,0 +1,6 @@
+2021-12-16 18:18:21.1998|ERROR|Core|NativeLibraryLoader.DirectLoadLibrary Failed to load library "libopus".
+System.DllNotFoundException: Unable to load shared library 'libopus' or one of its dependencies. In order to help diagnose loading problems, consider setting the LD_DEBUG environment variable: liblibopus: cannot open shared object file: No such file or directory
+   at TSLib.Audio.Opus.NativeMethods.opus_get_version_string()
+   at TSLib.Audio.Opus.NativeMethods.<>c.<PreloadLibrary>b__3_0() in /mnt/c/Users/jhnwu/OneDrive/Documents/Project Folder/Python/POG-bot/TS3AudioBot/TSLib/Audio/Opus/NativeMethods.cs:line 45
+   at TSLib.Helper.NativeLibraryLoader.DirectLoadLibrary(String lib, Action dummyLoad) in /mnt/c/Users/jhnwu/OneDrive/Documents/Project Folder/Python/POG-bot/TS3AudioBot/TSLib/Helper/NativeLibraryLoader.cs:line 32
+2021-12-16 18:18:21.2905|ERROR|Core|Setup.SetupLibopus Couldn't find libopus. Make sure it is installed or placed in the correct folder.

@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  bwae-battle-bot-lobby:
+    image: localhost:5000/bwae-battle-bot-lobby:latest
+    container_name: bwae-battle-bot-lobby
+    restart: always
+    volumes:
+      - /home/user/storage/bwae-data/BwaeBATTLEBot/bwae-battle-bot-lobby:/bwae-battle-bot-lobby
+
+  bwae-battle-bot-ts:
+    image: localhost:5000/bwae-battle-bot-ts:latest
+    container_name: bwae-battle-bot-ts
+    restart: always
+    volumes:
+      - /home/user/storage/bwae-data/BwaeBATTLEBot/bwae-battle-bot-ts:/bwae-battle-bot-ts
+    ports:
+      - "58913:58913"
+
+  bwae-battle-bot-mongodb:
+    image: mongo:latest
+    container_name: bwae-battle-bot-mongodb
+    volumes:
+      - /home/user/storage/bwae-data/BwaeBATTLEBot/bwae-battle-bot-mongodb:/data/db
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=mongoDBUsername
+      - MONGO_INITDB_ROOT_PASSWORD=mongoDBPassword
+      - MONGO_INITDB_DATABASE=mongoDBDBName

@@ -1,0 +1,89 @@
+2021-12-14 13:51:55.9356| INFO|Core|Setup.LogHeader [============ TS3AudioBot started =============]
+2021-12-14 13:51:55.9710| INFO|Core|Setup.LogHeader [ Date: Tuesday, 14 December 2021 13:51:55
+2021-12-14 13:51:55.9934| INFO|Core|Setup.LogHeader [ Version: 0.12.2/master/4c6be036
+2021-12-14 13:51:55.9934| INFO|Core|Setup.LogHeader [ Build: Release
+2021-12-14 13:51:55.9934| INFO|Core|Setup.LogHeader [ Platform: Windows 6.2.9200.0 (64bit)
+2021-12-14 13:51:55.9934| INFO|Core|Setup.LogHeader [ Runtime: .NET Core (3.1.21) ServerGC:True GC:SustainedLowLatency
+2021-12-14 13:51:55.9972| INFO|Core|Setup.LogHeader [ Opus: libopus 1.2.1-fixed (x64)
+2021-12-14 13:51:55.9972| INFO|Core|Setup.LogHeader [==============================================]
+2021-12-14 13:51:57.7721| INFO|Core|WebServer.StartWebServerInternal Starting Webserver on port 58913
+2021-12-14 13:51:59.9829| INFO|Core|Bot.Run Bot "1" connecting to "ts.bushidoway.net"
+2021-12-14 13:52:04.2429| INFO|Core|Ts3Client.ConnectClient Client connected.
+2021-12-14 13:58:01.8789| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/subscribe/channel/49)
+2021-12-14 13:58:01.8789| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/subscribe/channel/77/80)
+2021-12-14 13:58:02.0476| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/xecute(/add/drop_match_1_picks.mp3)(/play))
+2021-12-14 13:58:11.0756| INFO|0|PlayManager.StopInternal Song queue ended: No next song could be played.
+2021-12-14 13:58:56.4668| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/unsubscribe/channel/49)
+2021-12-14 13:58:56.5382| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/xecute(/add/select_teams.mp3)(/play))
+2021-12-14 13:58:58.8356| INFO|0|PlayManager.StopInternal Song queue ended: No next song could be played.
+2021-12-14 13:59:03.5866| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/xecute(/add/select_factions.mp3)(/play))
+2021-12-14 13:59:05.6397| INFO|0|PlayManager.StopInternal Song queue ended: No next song could be played.
+2021-12-14 13:59:07.3962| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/xecute(/add/team_2_TR.mp3)(/play))
+2021-12-14 13:59:09.3434| INFO|0|PlayManager.StopInternal Song queue ended: No next song could be played.
+2021-12-14 13:59:09.7127| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/xecute(/add/team_1_VS.mp3)(/play))
+2021-12-14 13:59:09.8418| WARN|Api|Util.UnwrapToLog client_is_flooding: the command failed to execute: client is flooding
+2021-12-14 13:59:09.8418| WARN|Api|Util.UnwrapToLog client_is_flooding: the command failed to execute: client is flooding
+2021-12-14 13:59:09.9288| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/xecute(/add/select_base.mp3)(/play))
+2021-12-14 13:59:11.6968| WARN|0|Util.UnwrapToLog client_is_flooding: the command failed to execute: client is flooding
+2021-12-14 13:59:11.6968| WARN|0|Util.UnwrapToLog client_is_flooding: the command failed to execute: client is flooding
+2021-12-14 13:59:13.3552| INFO|0|PlayManager.StopInternal Song queue ended: No next song could be played.
+2021-12-14 13:59:13.4276| WARN|0|Util.UnwrapToLog client_is_flooding: the command failed to execute: client is flooding
+2021-12-14 13:59:13.6025| WARN|0|Util.UnwrapToLog client_is_flooding: the command failed to execute: client is flooding
+2021-12-14 13:59:15.6636| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/xecute(/add/base_selected.mp3)(/play))
+2021-12-14 13:59:15.8125| WARN|Api|Util.UnwrapToLog client_is_flooding: the command failed to execute: client is flooding
+2021-12-14 13:59:15.8309| WARN|Api|Util.UnwrapToLog client_is_flooding: the command failed to execute: client is flooding
+2021-12-14 13:59:16.6622| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/xecute(/add/base_ceres.mp3)(/play))
+2021-12-14 13:59:16.7342| INFO|0|PlayManager.StopInternal Song queue ended: No next song could be played.
+2021-12-14 13:59:16.8055| WARN|0|Util.UnwrapToLog client_is_flooding: the command failed to execute: client is flooding
+2021-12-14 13:59:16.8693| WARN|Api|Util.UnwrapToLog client_is_flooding: the command failed to execute: client is flooding
+2021-12-14 13:59:16.8756| WARN|Api|Util.UnwrapToLog client_is_flooding: the command failed to execute: client is flooding
+2021-12-14 13:59:16.9670| WARN|0|Util.UnwrapToLog client_is_flooding: the command failed to execute: client is flooding
+2021-12-14 13:59:17.6662| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/xecute(/add/type_ready.mp3)(/play))
+2021-12-14 13:59:18.5485| WARN|0|Util.UnwrapToLog client_is_flooding: the command failed to execute: client is flooding
+2021-12-14 13:59:18.5717| WARN|0|Util.UnwrapToLog client_is_flooding: the command failed to execute: client is flooding
+2021-12-14 13:59:22.8243| INFO|0|PlayManager.StopInternal Song queue ended: No next song could be played.
+2021-12-14 13:59:22.9085| WARN|0|Util.UnwrapToLog client_is_flooding: the command failed to execute: client is flooding
+2021-12-14 13:59:23.0733| WARN|0|Util.UnwrapToLog client_is_flooding: the command failed to execute: client is flooding
+2021-12-14 14:00:12.2093| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/xecute(/add/team_1_ready.mp3)(/play))
+2021-12-14 14:00:13.3658| INFO|0|PlayManager.StopInternal Song queue ended: No next song could be played.
+2021-12-14 14:00:13.4438| WARN|0|Util.UnwrapToLog client_is_flooding: the command failed to execute: client is flooding
+2021-12-14 14:00:13.6134| WARN|0|Util.UnwrapToLog client_is_flooding: the command failed to execute: client is flooding
+2021-12-14 14:00:15.5240| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/xecute(/add/team_2_ready.mp3)(/play))
+2021-12-14 14:00:15.6612| WARN|Api|Util.UnwrapToLog client_is_flooding: the command failed to execute: client is flooding
+2021-12-14 14:00:15.6753| WARN|Api|Util.UnwrapToLog client_is_flooding: the command failed to execute: client is flooding
+2021-12-14 14:00:15.8497| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/xecute(/add/30s.mp3)(/play))
+2021-12-14 14:00:17.0078| WARN|0|Util.UnwrapToLog client_is_flooding: the command failed to execute: client is flooding
+2021-12-14 14:00:17.0214| WARN|0|Util.UnwrapToLog client_is_flooding: the command failed to execute: client is flooding
+2021-12-14 14:00:18.9736| INFO|0|PlayManager.StopInternal Song queue ended: No next song could be played.
+2021-12-14 14:00:19.0475| WARN|0|Bot.UpdateBotStatusInternal client_is_flooding: the command failed to execute: client is flooding
+2021-12-14 14:00:19.2145| WARN|0|Util.UnwrapToLog client_is_flooding: the command failed to execute: client is flooding
+2021-12-14 14:00:35.8594| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/xecute(/add/10s.mp3)(/play))
+2021-12-14 14:00:35.9962| WARN|Api|Bot.UpdateBotStatusInternal client_is_flooding: the command failed to execute: client is flooding
+2021-12-14 14:00:35.9962| WARN|Api|Bot.GenerateStatusImageInternal client_is_flooding: the command failed to execute: client is flooding
+2021-12-14 14:00:37.9481| INFO|0|PlayManager.StopInternal Song queue ended: No next song could be played.
+2021-12-14 14:00:38.0183| WARN|0|Bot.UpdateBotStatusInternal client_is_flooding: the command failed to execute: client is flooding
+2021-12-14 14:00:38.2030| WARN|0|Bot.GenerateStatusImageInternal client_is_flooding: the command failed to execute: client is flooding
+2021-12-14 14:00:40.8658| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/xecute(/add/5s.mp3)(/play))
+2021-12-14 14:00:41.0200| WARN|Api|Bot.UpdateBotStatusInternal client_is_flooding: the command failed to execute: client is flooding
+2021-12-14 14:00:41.0200| WARN|Api|Bot.GenerateStatusImageInternal client_is_flooding: the command failed to execute: client is flooding
+2021-12-14 14:00:48.1117| INFO|0|PlayManager.StopInternal Song queue ended: No next song could be played.
+2021-12-14 14:00:48.1726| WARN|0|Bot.UpdateBotStatusInternal client_is_flooding: the command failed to execute: client is flooding
+2021-12-14 14:00:48.3532| WARN|0|Bot.GenerateStatusImageInternal client_is_flooding: the command failed to execute: client is flooding
+2021-12-14 14:01:46.9755| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/xecute(/add/round_over.mp3)(/play))
+2021-12-14 14:01:46.9755| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/xecute(/add/switch_sides.mp3)(/play))
+2021-12-14 14:01:47.9376| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/xecute(/add/type_ready.mp3)(/play))
+2021-12-14 14:01:54.9585| WARN|0|Bot.GenerateStatusImageInternal file_invalid_path: the command failed to execute: invalid file path
+2021-12-14 14:01:54.9585| WARN|0|Bot.GenerateStatusImageInternal file_invalid_path: the command failed to execute: invalid file path
+2021-12-14 14:01:55.2980| INFO|0|PlayManager.StopInternal Song queue ended: No next song could be played.
+2021-12-14 14:02:38.4703| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/xecute(/add/team_1_ready.mp3)(/play))
+2021-12-14 14:02:39.6798| INFO|0|PlayManager.StopInternal Song queue ended: No next song could be played.
+2021-12-14 14:03:51.1817| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/xecute(/add/team_2_ready.mp3)(/play))
+2021-12-14 14:03:51.4849| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/xecute(/add/30s.mp3)(/play))
+2021-12-14 14:03:52.6532| WARN|0|Bot.GenerateStatusImageInternal file_invalid_path: the command failed to execute: invalid file path
+2021-12-14 14:03:54.6186| INFO|0|PlayManager.StopInternal Song queue ended: No next song could be played.
+2021-12-14 14:04:11.4972| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/xecute(/add/10s.mp3)(/play))
+2021-12-14 14:04:13.5414| INFO|0|PlayManager.StopInternal Song queue ended: No next song could be played.
+2021-12-14 14:04:16.5030| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/xecute(/add/5s.mp3)(/play))
+2021-12-14 14:04:23.6925| INFO|0|PlayManager.StopInternal Song queue ended: No next song could be played.
+2021-12-14 14:05:22.3969| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/xecute(/add/round_over.mp3)(/play))
+2021-12-14 14:05:24.8822| INFO|0|PlayManager.StopInternal Song queue ended: No next song could be played.

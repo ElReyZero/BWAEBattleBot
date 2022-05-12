@@ -1,0 +1,17 @@
+2021-12-16 18:25:55.5159| INFO|Core|Setup.LogHeader [============ TS3AudioBot started =============]
+2021-12-16 18:25:55.5391| INFO|Core|Setup.LogHeader [ Date: Thursday, 16 December 2021 18:25:55
+2021-12-16 18:25:55.5750| INFO|Core|Setup.LogHeader [ Version: <?>/<?>/<?>
+2021-12-16 18:25:55.5758| INFO|Core|Setup.LogHeader [ Build: <?>
+2021-12-16 18:25:55.5764| INFO|Core|Setup.LogHeader [ Platform: Ubuntu 20.04.3 LTS (Focal Fossa) (64bit)
+2021-12-16 18:25:55.5764| INFO|Core|Setup.LogHeader [ Runtime: .NET Core (3.1.21) ServerGC:True GC:SustainedLowLatency
+2021-12-16 18:25:55.5783| INFO|Core|Setup.LogHeader [ Opus: libopus 1.3.1 (x64)
+2021-12-16 18:25:55.5783| INFO|Core|Setup.LogHeader [==============================================]
+2021-12-16 18:25:56.2333| INFO|Core|WebServer.StartWebServerInternal Starting Webserver on port 58913
+2021-12-16 18:25:56.6418| INFO|Core|Bot.Run Bot "1" connecting to "ts.bushidoway.net"
+2021-12-16 18:25:59.7595| INFO|Core|Ts3Client.ConnectClient Client connected.
+2021-12-16 18:26:11.5662| INFO||Core.ConsoleInterruptHandler Got interrupt signal, trying to soft-exit.
+2021-12-16 18:26:11.5689| INFO||Core.StopAsync TS3AudioBot shutting down.
+2021-12-16 18:26:11.5718| INFO||Bot.Stop Bot (0) disconnecting.
+2021-12-16 18:26:11.6443| INFO||WebServer.Dispose WebServer is closing
+2021-12-16 18:26:11.6461| INFO|Core|WebServer.OnShutdown WebServer has closed
+2021-12-16 18:26:11.6476| INFO||Core.StopAsync Bye

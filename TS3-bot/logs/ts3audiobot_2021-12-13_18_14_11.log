@@ -1,0 +1,38 @@
+2021-12-13 18:14:11.2965| INFO|Core|Setup.LogHeader [============ TS3AudioBot started =============]
+2021-12-13 18:14:11.3280| INFO|Core|Setup.LogHeader [ Date: Monday, 13 December 2021 18:14:11
+2021-12-13 18:14:11.3413| INFO|Core|Setup.LogHeader [ Version: 0.12.2/master/4c6be036
+2021-12-13 18:14:11.3413| INFO|Core|Setup.LogHeader [ Build: Release
+2021-12-13 18:14:11.3413| INFO|Core|Setup.LogHeader [ Platform: Windows 6.2.9200.0 (64bit)
+2021-12-13 18:14:11.3413| INFO|Core|Setup.LogHeader [ Runtime: .NET Core (3.1.21) ServerGC:True GC:SustainedLowLatency
+2021-12-13 18:14:11.3413| INFO|Core|Setup.LogHeader [ Opus: libopus 1.2.1-fixed (x64)
+2021-12-13 18:14:11.3413| INFO|Core|Setup.LogHeader [==============================================]
+2021-12-13 18:14:11.7232| INFO|Core|WebServer.StartWebServerInternal Starting Webserver on port 58913
+2021-12-13 18:14:11.9167| INFO|Core|Bot.Run Bot "1" connecting to "ts.bushidoway.net"
+2021-12-13 18:14:15.0726| INFO|Core|Ts3Client.ConnectClient Client connected.
+2021-12-13 18:14:28.8721| INFO|0|Bot.OnMessageReceived User ElReyZero requested: !play lobby_full.mp3
+2021-12-13 18:14:31.0271| INFO|0|PlayManager.StopInternal Song queue ended: No next song could be played.
+2021-12-13 18:14:33.7272| INFO|0|Bot.OnMessageReceived User ElReyZero requested: !play lobby_full.mp3
+2021-12-13 18:14:35.7593| INFO|0|PlayManager.StopInternal Song queue ended: No next song could be played.
+2021-12-13 18:14:42.7725| INFO|0|Bot.OnMessageReceived User ElReyZero requested: !play lobby_full.mp3
+2021-12-13 18:14:44.8086| INFO|0|PlayManager.StopInternal Song queue ended: No next song could be played.
+2021-12-13 18:15:49.9849| INFO|0|Bot.OnMessageReceived User ElReyZero requested: !play lobby_full.mp3
+2021-12-13 18:15:52.0160| INFO|0|PlayManager.StopInternal Song queue ended: No next song could be played.
+2021-12-13 18:15:54.6752| INFO|0|Bot.OnMessageReceived User ElReyZero requested: !play lobby_full.mp3
+2021-12-13 18:15:56.7083| INFO|0|PlayManager.StopInternal Song queue ended: No next song could be played.
+2021-12-13 18:15:59.6976| INFO|0|Bot.OnMessageReceived User ElReyZero requested: !play lobby_full.mp3
+2021-12-13 18:16:01.7279| INFO|0|PlayManager.StopInternal Song queue ended: No next song could be played.
+2021-12-13 18:16:34.0658| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/list
+2021-12-13 18:18:08.1200| INFO|0|Bot.OnMessageReceived User ElReyZero requested: !subscribe channel 49
+2021-12-13 18:18:20.3244| INFO|0|Bot.OnMessageReceived User ElReyZero requested: !subscribe channel 77
+2021-12-13 18:18:22.9249| INFO|0|Bot.OnMessageReceived User ElReyZero requested: !subscribe channel 80
+2021-12-13 18:18:26.1227| INFO|0|Bot.OnMessageReceived User ElReyZero requested: !play lobby_full.mp3
+2021-12-13 18:18:28.1483| INFO|0|PlayManager.StopInternal Song queue ended: No next song could be played.
+2021-12-13 18:18:32.2846| INFO|0|Bot.OnMessageReceived User ElReyZero requested: !subscribe channel 80
+2021-12-13 18:18:36.0830| INFO|0|Bot.OnMessageReceived User ElReyZero requested: !play lobby_full.mp3
+2021-12-13 18:18:38.1168| INFO|0|PlayManager.StopInternal Song queue ended: No next song could be played.
+2021-12-13 18:19:42.2003| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/subscribe/channel/77/80)
+2021-12-13 18:19:42.2003| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/subscribe/channel/49)
+2021-12-13 18:19:42.2199| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/xecute(/add/drop_match_1_picks.mp3)(/play))
+2021-12-13 18:20:57.7982| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/json/merge
+2021-12-13 18:21:00.9974| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/list
+2021-12-13 18:21:08.0062| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/list

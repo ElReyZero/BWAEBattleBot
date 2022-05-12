@@ -1,0 +1,116 @@
+stages:
+- clean
+- test
+- build
+- deploy
+
+
+bwae-battle-bot-lobby-test-cleanup:
+  stage: clean
+  allow_failure: true
+  tags:
+    - bwae-services
+  only:
+    - master
+    - lobby-bot
+  script:
+    - docker stop bwae-battle-bot-lobby-test
+    - docker rm bwae-battle-bot-lobby-test
+
+
+bwae-battle-bot-lobby-test:
+  stage: test
+  tags:
+    - bwae-services
+  only:
+    - lobby-bot
+  script:
+    - docker build . -f bwae-battle-bot-lobby.Dockerfile -t --no-cache bwae/bwae-battle-bot-lobby-test:latest
+    - docker tag bwae/bwae-battle-bot-lobby-test:latest localhost:5000/bwae-battle-bot-lobby-test
+    - docker push localhost:5000/bwae-battle-bot-lobby-test
+    - docker run --name bwae-battle-bot-lobby-test localhost:5000/bwae-battle-bot-lobby-test:latest
+
+bwae-battle-bot-lobby-cleanup:
+  stage: clean
+  allow_failure: true
+  tags:
+    - bwae-services
+  only:
+    - master
+  script:
+    - docker stop bwae-battle-bot-lobby
+    - docker rm bwae-battle-bot-lobby
+
+
+bwae-battle-bot-ts-cleanup:
+  stage: clean
+  allow_failure: true
+  tags:
+    - bwae-services
+  only:
+    - ts-bot
+  script:
+    - docker stop bwae-battle-bot-ts
+  
+  
+bwae-battle-bot-ts-test-cleanup:
+  stage: clean
+  allow_failure: true
+  tags:
+    - bwae-services
+  only:
+    - master
+    - ts-bot
+  script:
+    - docker stop bwae-battle-bot-ts-test
+    - docker rm bwae-battle-bot-ts-test
+
+bwae-battle-bot-ts-test:
+  stage: test
+  tags:
+    - bwae-services
+  only:
+    - ts-bot
+  script:
+    - docker build . -f bwae-battle-bot-ts.Dockerfile -t bwae/bwae-battle-bot-ts-test:latest
+    - docker tag bwae/bwae-battle-bot-ts-test:latest localhost:5000/bwae-battle-bot-ts-test
+    - docker push localhost:5000/bwae-battle-bot-ts-test
+    - docker run --name bwae-battle-bot-ts-test -p 58913:58913 localhost:5000/bwae-battle-bot-ts-test:latest
+
+
+bwae-battle-bot-lobby-build:
+  stage: build
+  tags:
+    - bwae-services
+  only:
+    - development
+    - master
+  script:
+    - docker build . -f bwae-battle-bot-lobby.Dockerfile -t bwae/bwae-battle-bot-lobby:latest
+    - docker tag bwae/bwae-battle-bot-lobby:latest localhost:5000/bwae-battle-bot-lobby
+    - docker push localhost:5000/bwae-battle-bot-lobby
+
+
+bwae-battle-bot-ts-build:
+  stage: build
+  tags:
+    - bwae-services
+  only:
+    - development
+    - master
+  script:
+    - docker build . -f bwae-battle-bot-ts.Dockerfile -t bwae/bwae-battle-bot-ts:latest
+    - docker tag bwae/bwae-battle-bot-ts:latest localhost:5000/bwae-battle-bot-ts
+    - docker push localhost:5000/bwae-battle-bot-ts
+
+
+bwae-battle-bot-deploy:
+  stage: deploy
+  allow_failure: true
+  tags:
+    - bwae-services
+  only:
+    - master
+  script:
+    - docker-compose up -d
+    

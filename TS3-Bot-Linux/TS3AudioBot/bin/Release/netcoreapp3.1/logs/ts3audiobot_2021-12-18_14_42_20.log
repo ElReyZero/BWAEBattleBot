@@ -1,0 +1,35 @@
+2021-12-18 14:42:20.8817| INFO|Core|Setup.LogHeader [============ TS3AudioBot started =============]
+2021-12-18 14:42:20.9057| INFO|Core|Setup.LogHeader [ Date: Saturday, 18 December 2021 14:42:20
+2021-12-18 14:42:20.9877| INFO|Core|Setup.LogHeader [ Version: <?>/<?>/<?>
+2021-12-18 14:42:20.9889| INFO|Core|Setup.LogHeader [ Build: <?>
+2021-12-18 14:42:20.9899| INFO|Core|Setup.LogHeader [ Platform: Ubuntu 20.04.3 LTS (Focal Fossa) (64bit)
+2021-12-18 14:42:20.9907| INFO|Core|Setup.LogHeader [ Runtime: .NET Core (3.1.21) ServerGC:True GC:SustainedLowLatency
+2021-12-18 14:42:20.9916| INFO|Core|Setup.LogHeader [ Opus: libopus 1.3.1 (x64)
+2021-12-18 14:42:20.9916| INFO|Core|Setup.LogHeader [==============================================]
+2021-12-18 14:42:21.4500| INFO|Core|WebServer.StartWebServerInternal Starting Webserver on port 58913
+2021-12-18 14:42:21.6275| INFO|Core|Bot.Run Bot "1" connecting to "ts.bushidoway.net"
+2021-12-18 14:42:24.8866| INFO|Core|Ts3Client.ConnectClient Client connected.
+2021-12-18 15:00:56.0720| INFO|Api|WebApi.ProcessApiV1Call ::ffff:127.0.0.1 Requested: /api/bot/template/1(/subscribe/channel/49)
+2021-12-18 15:00:56.0720| INFO|Api|WebApi.ProcessApiV1Call ::ffff:127.0.0.1 Requested: /api/bot/template/1(/subscribe/channel/77/80)
+2021-12-18 15:00:56.1477| INFO|Api|WebApi.ProcessApiV1Call ::ffff:127.0.0.1 Requested: /api/bot/template/1(/xecute(/add/drop_match_1_picks.mp3)(/play))
+2021-12-18 15:02:01.9522| INFO|Api|WebApi.ProcessApiV1Call ::ffff:127.0.0.1 Requested: /api/bot/template/1(/unsubscribe/channel/49)
+2021-12-18 15:02:01.9591| INFO|Api|WebApi.ProcessApiV1Call ::ffff:127.0.0.1 Requested: /api/bot/template/1(/xecute(/add/select_teams.mp3)(/play))
+2021-12-18 15:02:05.2418| INFO|Api|WebApi.ProcessApiV1Call ::ffff:127.0.0.1 Requested: /api/bot/template/1(/xecute(/add/select_factions.mp3)(/play))
+2021-12-18 15:06:45.7744| INFO|Api|WebApi.ProcessApiV1Call ::ffff:127.0.0.1 Requested: /api/bot/template/1(/subscribe/channel/77/80)
+2021-12-18 15:06:45.7744| INFO|Api|WebApi.ProcessApiV1Call ::ffff:127.0.0.1 Requested: /api/bot/template/1(/subscribe/channel/49)
+2021-12-18 15:06:45.8132| INFO|Api|WebApi.ProcessApiV1Call ::ffff:127.0.0.1 Requested: /api/bot/template/1(/xecute(/add/drop_match_1_picks.mp3)(/play))
+2021-12-18 15:06:51.7559| INFO|Api|WebApi.ProcessApiV1Call ::ffff:127.0.0.1 Requested: /api/bot/template/1(/unsubscribe/channel/49)
+2021-12-18 15:06:51.7658| INFO|Api|WebApi.ProcessApiV1Call ::ffff:127.0.0.1 Requested: /api/bot/template/1(/xecute(/add/select_teams.mp3)(/play))
+2021-12-18 15:06:52.5948| INFO|Api|WebApi.ProcessApiV1Call ::ffff:127.0.0.1 Requested: /api/bot/template/1(/xecute(/add/select_factions.mp3)(/play))
+2021-12-18 15:09:45.4088| INFO|0|Bot.OnMessageReceived User ElReyZero requested: !subscribe 49
+2021-12-18 15:09:52.1961| INFO|0|Bot.OnMessageReceived User ElReyZero requested: !subscribe 77
+2021-12-18 15:09:56.9145| INFO|0|Bot.OnMessageReceived User ElReyZero requested: !subscribe 80
+2021-12-18 15:10:56.0794| INFO|Api|WebApi.ProcessApiV1Call ::ffff:127.0.0.1 Requested: /api/bot/template/1(/subscribe/channel/77/80)
+2021-12-18 15:10:56.0821| INFO|Api|WebApi.ProcessApiV1Call ::ffff:127.0.0.1 Requested: /api/bot/template/1(/subscribe/channel/49)
+2021-12-18 15:10:56.1176| INFO|Api|WebApi.ProcessApiV1Call ::ffff:127.0.0.1 Requested: /api/bot/template/1(/xecute(/add/drop_match_1_picks.mp3)(/play))
+2021-12-18 15:11:07.3768| INFO||Core.ConsoleInterruptHandler Got interrupt signal, trying to soft-exit.
+2021-12-18 15:11:07.3798| INFO||Core.StopAsync TS3AudioBot shutting down.
+2021-12-18 15:11:07.3827| INFO||Bot.Stop Bot (0) disconnecting.
+2021-12-18 15:11:07.4554| INFO||WebServer.Dispose WebServer is closing
+2021-12-18 15:11:07.4567| INFO|Core|WebServer.OnShutdown WebServer has closed
+2021-12-18 15:11:07.4583| INFO||Core.StopAsync Bye

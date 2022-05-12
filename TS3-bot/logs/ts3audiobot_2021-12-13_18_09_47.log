@@ -1,0 +1,10 @@
+2021-12-13 18:09:47.2033| INFO|Core|Setup.LogHeader [============ TS3AudioBot started =============]
+2021-12-13 18:09:47.2325| INFO|Core|Setup.LogHeader [ Date: Monday, 13 December 2021 18:09:47
+2021-12-13 18:09:47.2460| INFO|Core|Setup.LogHeader [ Version: 0.12.2/master/4c6be036
+2021-12-13 18:09:47.2460| INFO|Core|Setup.LogHeader [ Build: Release
+2021-12-13 18:09:47.2460| INFO|Core|Setup.LogHeader [ Platform: Windows 6.2.9200.0 (64bit)
+2021-12-13 18:09:47.2460| INFO|Core|Setup.LogHeader [ Runtime: .NET Core (3.1.21) ServerGC:True GC:SustainedLowLatency
+2021-12-13 18:09:47.2460| INFO|Core|Setup.LogHeader [ Opus: libopus 1.2.1-fixed (x64)
+2021-12-13 18:09:47.2460| INFO|Core|Setup.LogHeader [==============================================]
+2021-12-13 18:09:47.6059|ERROR|Core|WebServer.StartWebServerInternal Can't find a WebInterface path to host. Try specifying the path to host in the config
+2021-12-13 18:09:47.6059| INFO|Core|WebServer.StartWebServerInternal Starting Webserver on port 58913

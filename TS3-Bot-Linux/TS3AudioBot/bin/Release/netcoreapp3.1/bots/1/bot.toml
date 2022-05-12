@@ -1,0 +1,36 @@
+#Starts the instance when the TS3AudioBot is launched.
+run = true
+
+[commands]
+
+[commands.alias]
+
+[connect]
+#Client nickname when connecting.
+name = "BWAE Battle Bot 1"
+#The server password. Leave empty for none.
+server_password = {  }
+#The default channel password. Leave empty for none.
+channel_password = { pw = "bot", hashed = false, autohash = false }
+#Overrides the displayed version for the ts3 client. Leave empty for default.
+client_version = {  }
+
+[connect.identity]
+#||| DO NOT MAKE THIS KEY PUBLIC ||| The client identity. You can import a teamspeak3 identity here too.
+key = "MCkDAgbAAgEgAiB8p9+2O5As3hS0Vmj3SMUE1cM5YtKAPy2vM+7xA4Lr+w=="
+#The client identity offset determining the security level.
+offset = 13
+
+[reconnect]
+
+[audio]
+#When a new song starts the volume will be trimmed to between min and max.
+#When the current volume already is between min and max nothing will happen.
+#To completely or partially disable this feature, set min to 0 and/or max to 100.
+volume = { default = 100.0, max = 100.0, min = 0.0 }
+
+[playlists]
+
+[history]
+
+[events]

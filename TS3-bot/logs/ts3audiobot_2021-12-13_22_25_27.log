@@ -1,0 +1,45 @@
+2021-12-13 22:25:27.6523| INFO|Core|Setup.LogHeader [============ TS3AudioBot started =============]
+2021-12-13 22:25:27.6859| INFO|Core|Setup.LogHeader [ Date: Monday, 13 December 2021 22:25:27
+2021-12-13 22:25:27.7007| INFO|Core|Setup.LogHeader [ Version: 0.12.2/master/4c6be036
+2021-12-13 22:25:27.7007| INFO|Core|Setup.LogHeader [ Build: Release
+2021-12-13 22:25:27.7007| INFO|Core|Setup.LogHeader [ Platform: Windows 6.2.9200.0 (64bit)
+2021-12-13 22:25:27.7007| INFO|Core|Setup.LogHeader [ Runtime: .NET Core (3.1.21) ServerGC:True GC:SustainedLowLatency
+2021-12-13 22:25:27.7007| INFO|Core|Setup.LogHeader [ Opus: libopus 1.2.1-fixed (x64)
+2021-12-13 22:25:27.7007| INFO|Core|Setup.LogHeader [==============================================]
+2021-12-13 22:25:28.1000| INFO|Core|WebServer.StartWebServerInternal Starting Webserver on port 58913
+2021-12-13 22:25:28.2787| INFO|Core|Bot.Run Bot "1" connecting to "ts.bushidoway.net"
+2021-12-13 22:25:31.5960| INFO|Core|Ts3Client.ConnectClient Client connected.
+2021-12-13 22:25:40.7921| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/subscribe/channel/77/80)
+2021-12-13 22:25:40.7921| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/subscribe/channel/49)
+2021-12-13 22:25:40.8815| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/xecute(/add/drop_match_1_picks.mp3)(/play))
+2021-12-13 22:25:48.3938| INFO|0|PlayManager.StopInternal Song queue ended: No next song could be played.
+2021-12-13 22:26:05.0682| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/list
+2021-12-13 22:26:06.8165| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/use/0/(/json/merge/(/bot/info)/(/info/%40-1/5)/(/song)/(/repeat)/(/random)/(/volume))
+2021-12-13 22:26:06.8165| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/use/0/(/json/merge/(/server/tree)/(/whisper/list))
+2021-12-13 22:26:07.3631| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/use/0/(/json/merge/(/volume/50)/(/volume))
+2021-12-13 22:26:11.7966| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/use/0/(/json/merge/(/server/tree)/(/whisper/list))
+2021-12-13 22:26:16.7933| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/use/0/(/json/merge/(/server/tree)/(/whisper/list))
+2021-12-13 22:26:18.6661| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/use/0/(/settings/get)
+2021-12-13 22:26:22.8910| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/use/0/(/settings/set/audio.volume.default/100)
+2021-12-13 22:26:37.8770| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/subscribe/channel/77/80)
+2021-12-13 22:26:37.8770| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/subscribe/channel/49)
+2021-12-13 22:26:37.8770| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/xecute(/add/drop_match_1_picks.mp3)(/play))
+2021-12-13 22:26:44.8607| INFO|0|PlayManager.StopInternal Song queue ended: No next song could be played.
+2021-12-13 22:27:19.3400| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/subscribe/channel/77/80)
+2021-12-13 22:27:19.3400| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/subscribe/channel/49)
+2021-12-13 22:27:19.3400| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/xecute(/add/drop_match_1_picks.mp3)(/play))
+2021-12-13 22:27:26.3278| INFO|0|PlayManager.StopInternal Song queue ended: No next song could be played.
+2021-12-13 22:27:32.2789| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/use/0/(/settings/set/audio.volume.default/42)
+2021-12-13 22:27:34.0203| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/use/0/(/settings/set/audio.volume.default/100)
+2021-12-13 22:27:36.7866| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/use/0/(/settings/set/audio.volume.default/42)
+2021-12-13 22:27:38.4485| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/use/0/(/settings/set/audio.volume.default/100)
+2021-12-13 22:27:40.3839| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/use/0/(/settings/set/audio.volume.max/100)
+2021-12-13 22:27:41.5342| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/use/0/(/settings/set/audio.volume.min/0)
+2021-12-13 22:27:55.5969| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/subscribe/channel/77/80)
+2021-12-13 22:27:55.5969| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/subscribe/channel/49)
+2021-12-13 22:27:55.5969| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/xecute(/add/drop_match_1_picks.mp3)(/play))
+2021-12-13 22:28:02.8175| INFO|0|PlayManager.StopInternal Song queue ended: No next song could be played.
+2021-12-13 22:28:17.7763| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/subscribe/channel/77/80)
+2021-12-13 22:28:17.7772| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/subscribe/channel/49)
+2021-12-13 22:28:17.7772| INFO|Api|WebApi.ProcessApiV1Call ::1 Requested: /api/bot/template/1(/xecute(/add/drop_match_1_picks.mp3)(/play))
+2021-12-13 22:28:24.7645| INFO|0|PlayManager.StopInternal Song queue ended: No next song could be played.

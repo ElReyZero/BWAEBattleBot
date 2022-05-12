@@ -1,0 +1,11 @@
+2022-01-20 20:07:56.9166| INFO|Core|Setup.LogHeader [============ TS3AudioBot started =============]
+2022-01-20 20:07:56.9582| INFO|Core|Setup.LogHeader [ Date: Thursday, 20 January 2022 20:07:56
+2022-01-20 20:07:56.9838| INFO|Core|Setup.LogHeader [ Version: 0.12.2/master/4c6be036
+2022-01-20 20:07:56.9838| INFO|Core|Setup.LogHeader [ Build: Release
+2022-01-20 20:07:56.9838| INFO|Core|Setup.LogHeader [ Platform: Windows 6.2.9200.0 (64bit)
+2022-01-20 20:07:56.9838| INFO|Core|Setup.LogHeader [ Runtime: .NET Core (3.1.22) ServerGC:True GC:SustainedLowLatency
+2022-01-20 20:07:56.9838| INFO|Core|Setup.LogHeader [ Opus: libopus 1.2.1-fixed (x64)
+2022-01-20 20:07:56.9838| INFO|Core|Setup.LogHeader [==============================================]
+2022-01-20 20:07:58.2229| INFO|Core|WebServer.StartWebServerInternal Starting Webserver on port 58913
+2022-01-20 20:07:58.8738| INFO|Core|Bot.Run Bot "1" connecting to "ts.bushidoway.net"
+2022-01-20 20:08:02.7464| INFO|Core|Ts3Client.ConnectClient Client connected.

@@ -1,0 +1,31 @@
+2021-12-13 18:09:21.5371| INFO|Core|Setup.LogHeader [============ TS3AudioBot started =============]
+2021-12-13 18:09:21.5683| INFO|Core|Setup.LogHeader [ Date: Monday, 13 December 2021 18:09:21
+2021-12-13 18:09:21.5820| INFO|Core|Setup.LogHeader [ Version: 0.12.2/master/4c6be036
+2021-12-13 18:09:21.5820| INFO|Core|Setup.LogHeader [ Build: Release
+2021-12-13 18:09:21.5820| INFO|Core|Setup.LogHeader [ Platform: Windows 6.2.9200.0 (64bit)
+2021-12-13 18:09:21.5820| INFO|Core|Setup.LogHeader [ Runtime: .NET Core (3.1.21) ServerGC:True GC:SustainedLowLatency
+2021-12-13 18:09:21.5820| INFO|Core|Setup.LogHeader [ Opus: libopus 1.2.1-fixed (x64)
+2021-12-13 18:09:21.5820| INFO|Core|Setup.LogHeader [==============================================]
+2021-12-13 18:09:21.8893| WARN|Core|RightsManager.CreateConfigIfNotExists No permission file found.
+2021-12-13 18:09:28.0712| INFO|Core|RightsManager.CreateConfig Creating new permission file ({"AdminUids":[""], "OverwriteIfExists":false})
+2021-12-13 18:09:28.1093|ERROR|Core|WebServer.StartWebServerInternal Can't find a WebInterface path to host. Try specifying the path to host in the config
+2021-12-13 18:09:28.1093| INFO|Core|WebServer.StartWebServerInternal Starting Webserver on port 58913
+2021-12-13 18:09:28.3218|FATAL|Core|Core.UnhandledExceptionHandler Critical program failure!
+System.ArgumentNullException: Value cannot be null. (Parameter 'address')
+   at TSLib.TsDnsResolver.TryResolve(String address, UInt16 defaultPort) in D:\Users\Juan PC\Downloads\TS3AudioBot\TSLib\TsDnsResolver.cs:line 65
+   at TS3AudioBot.BotManager.<>c.<<RunBots>b__6_0>d.MoveNext() in D:\Users\Juan PC\Downloads\TS3AudioBot\TS3AudioBot\BotManager.cs:line 60
+--- End of stack trace from previous location where exception was thrown ---
+   at TS3AudioBot.Helper.Interactive.LoopActionAsync(String question, Func`2 action) in D:\Users\Juan PC\Downloads\TS3AudioBot\TS3AudioBot\Helper\Interactive.cs:line 53
+   at TS3AudioBot.BotManager.RunBots(Boolean interactive) in D:\Users\Juan PC\Downloads\TS3AudioBot\TS3AudioBot\BotManager.cs:line 58
+   at TS3AudioBot.Core.Run(ParameterData setup) in D:\Users\Juan PC\Downloads\TS3AudioBot\TS3AudioBot\Core.cs:line 92
+   at TS3AudioBot.Setup.StartBot(ParameterData setup) in D:\Users\Juan PC\Downloads\TS3AudioBot\TS3AudioBot\Setup.cs:line 92
+   at System.Threading.Tasks.Task.<>c.<ThrowAsync>b__139_1(Object state)
+   at System.Threading.QueueUserWorkItemCallback.<>c.<.cctor>b__6_0(QueueUserWorkItemCallback quwi)
+   at System.Threading.ExecutionContext.RunForThreadPoolUnsafe[TState](ExecutionContext executionContext, Action`1 callback, TState& state)
+   at System.Threading.QueueUserWorkItemCallback.Execute()
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
+   at System.Threading._ThreadPoolWaitCallback.PerformWaitCallback()
+2021-12-13 18:09:28.3887| INFO|Core|Core.StopAsync TS3AudioBot shutting down.
+2021-12-13 18:09:28.3887| INFO|Core|WebServer.Dispose WebServer is closing
+2021-12-13 18:09:28.3887| INFO|Core|WebServer.OnShutdown WebServer has closed
+2021-12-13 18:09:28.3887| INFO|Core|Core.StopAsync Bye

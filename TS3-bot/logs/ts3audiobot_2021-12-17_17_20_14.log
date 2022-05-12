@@ -1,0 +1,21 @@
+2021-12-17 17:20:14.8927| INFO|Core|Setup.LogHeader [============ TS3AudioBot started =============]
+2021-12-17 17:20:14.9269| INFO|Core|Setup.LogHeader [ Date: Friday, 17 December 2021 17:20:14
+2021-12-17 17:20:14.9405| INFO|Core|Setup.LogHeader [ Version: 0.12.2/master/4c6be036
+2021-12-17 17:20:14.9405| INFO|Core|Setup.LogHeader [ Build: Release
+2021-12-17 17:20:14.9405| INFO|Core|Setup.LogHeader [ Platform: Windows 6.2.9200.0 (64bit)
+2021-12-17 17:20:14.9405| INFO|Core|Setup.LogHeader [ Runtime: .NET Core (3.1.22) ServerGC:True GC:SustainedLowLatency
+2021-12-17 17:20:14.9405| INFO|Core|Setup.LogHeader [ Opus: libopus 1.2.1-fixed (x64)
+2021-12-17 17:20:14.9405| INFO|Core|Setup.LogHeader [==============================================]
+2021-12-17 17:20:15.3727| INFO|Core|WebServer.StartWebServerInternal Starting Webserver on port 58913
+2021-12-17 17:20:15.5955| INFO|Core|Bot.Run Bot "1" connecting to "ts.bushidoway.net"
+2021-12-17 17:20:18.9900| INFO|Core|Ts3Client.ConnectClient Client connected.
+2021-12-17 17:22:00.0722| INFO|0|Bot.OnMessageReceived User ElReyZero requested: !play gelos_in_prison.mp3
+2021-12-17 17:22:01.6271| INFO|0|PlayManager.StopInternal Song queue ended: No next song could be played.
+2021-12-17 17:22:07.2467| INFO|0|Bot.OnMessageReceived User ElReyZero requested: !play gelos_in_prison.mp3
+2021-12-17 17:22:08.5181| INFO|0|PlayManager.StopInternal Song queue ended: No next song could be played.
+2021-12-17 17:22:15.2025| INFO|0|Bot.OnMessageReceived User ElReyZero requested: !play gelos_in_prison_v2.mp3
+2021-12-17 17:22:16.4697| INFO|0|PlayManager.StopInternal Song queue ended: No next song could be played.
+2021-12-17 17:22:21.0617| INFO|0|Bot.OnMessageReceived User ElReyZero requested: !play gelos_in_prison.mp3
+2021-12-17 17:22:22.3441| INFO|0|PlayManager.StopInternal Song queue ended: No next song could be played.
+2021-12-17 17:22:22.4205| WARN|0|Util.UnwrapToLog client_is_flooding: the command failed to execute: client is flooding
+2021-12-17 17:22:22.5949| WARN|0|Util.UnwrapToLog client_is_flooding: the command failed to execute: client is flooding

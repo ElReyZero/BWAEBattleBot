@@ -1,0 +1,9 @@
+2021-12-13 18:10:06.6967| INFO|Core|Setup.LogHeader [============ TS3AudioBot started =============]
+2021-12-13 18:10:06.7269| INFO|Core|Setup.LogHeader [ Date: Monday, 13 December 2021 18:10:06
+2021-12-13 18:10:06.7392| INFO|Core|Setup.LogHeader [ Version: 0.12.2/master/4c6be036
+2021-12-13 18:10:06.7392| INFO|Core|Setup.LogHeader [ Build: Release
+2021-12-13 18:10:06.7392| INFO|Core|Setup.LogHeader [ Platform: Windows 6.2.9200.0 (64bit)
+2021-12-13 18:10:06.7392| INFO|Core|Setup.LogHeader [ Runtime: .NET Core (3.1.21) ServerGC:True GC:SustainedLowLatency
+2021-12-13 18:10:06.7392| INFO|Core|Setup.LogHeader [ Opus: libopus 1.2.1-fixed (x64)
+2021-12-13 18:10:06.7392| INFO|Core|Setup.LogHeader [==============================================]
+2021-12-13 18:10:07.1022| INFO|Core|WebServer.StartWebServerInternal Starting Webserver on port 58913

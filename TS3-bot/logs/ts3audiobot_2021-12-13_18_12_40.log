@@ -1,0 +1,15 @@
+2021-12-13 18:12:40.2487| INFO|Core|Setup.LogHeader [============ TS3AudioBot started =============]
+2021-12-13 18:12:40.2788| INFO|Core|Setup.LogHeader [ Date: Monday, 13 December 2021 18:12:40
+2021-12-13 18:12:40.2788| INFO|Core|Setup.LogHeader [ Version: 0.12.2/master/4c6be036
+2021-12-13 18:12:40.2932| INFO|Core|Setup.LogHeader [ Build: Release
+2021-12-13 18:12:40.2932| INFO|Core|Setup.LogHeader [ Platform: Windows 6.2.9200.0 (64bit)
+2021-12-13 18:12:40.2932| INFO|Core|Setup.LogHeader [ Runtime: .NET Core (3.1.21) ServerGC:True GC:SustainedLowLatency
+2021-12-13 18:12:40.2932| INFO|Core|Setup.LogHeader [ Opus: libopus 1.2.1-fixed (x64)
+2021-12-13 18:12:40.2932| INFO|Core|Setup.LogHeader [==============================================]
+2021-12-13 18:12:40.6727| INFO|Core|WebServer.StartWebServerInternal Starting Webserver on port 58913
+2021-12-13 18:12:40.8500| INFO|Core|Bot.Run Bot "1" connecting to "ts.bushidoway.net"
+2021-12-13 18:12:44.2398| INFO|Core|Ts3Client.ConnectClient Client connected.
+2021-12-13 18:12:48.7446| INFO|0|Bot.OnMessageReceived User ElReyZero requested: !play lobby_full.mp3
+2021-12-13 18:12:50.9083| INFO|0|PlayManager.StopInternal Song queue ended: No next song could be played.
+2021-12-13 18:13:16.8180| INFO|0|Bot.OnMessageReceived User ElReyZero requested: !play round_over.mp3
+2021-12-13 18:13:19.3118| INFO|0|PlayManager.StopInternal Song queue ended: No next song could be played.
