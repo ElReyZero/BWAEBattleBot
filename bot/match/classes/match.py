@@ -25,7 +25,7 @@ def _add_ih_callback(ih, ctx, matchClass, player, match, faction1, faction2):
     @ih.callback('faction1')
     async def on_f1_select(p, interaction_id, interaction, interaction_values):
         await interaction.response.defer()
-        await matchClass.add_player_to_match(ctx, interaction, player, match, 0, faction2, ih)
+        await matchClass.add_player_to_match(ctx, interaction, player, match, 0, faction1, ih)
 
     @ih.callback('faction2')
     async def on_f2_select(p, interaction_id, interaction, interaction_values):
