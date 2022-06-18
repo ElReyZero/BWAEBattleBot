@@ -165,6 +165,7 @@ class AllStrings(Enum):
     DISPLAY_STATS_ADMIN = Message(None, embed=embeds.player_stats)
     WRONG_COMMAND_JOIN_1v1 = Message("If you're trying to join the 1v1, use `=join1v1` instead!")
     WRONG_COMMAND_JOIN_TRAINING = Message("If you're trying to join the training, use `=joinTraining` or `=letmein` instead!")
+    WRONG_COMMAND_JOIN_MATCH = Message("The command `={}` can only be used in the matches channels!")
     BOT_UNLOCKED = Message("Unlocked!")
     BOT_LOCKED = Message("Locked!")
     BOT_IS_LOCKED = Message("Bot is locked!")
