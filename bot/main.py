@@ -100,7 +100,7 @@ def _add_main_handlers(client):
                     elif match and match.isTraining:
                         await disp.WRONG_COMMAND_JOIN_TRAINING.send(ctx)
                         return
-                    elif '1v1' in ctx.command.name.lower() or 'training' in ctx.command.name.lower():
+                    elif ('1v1' in ctx.command.name.lower() or 'training' in ctx.command.name.lower()) and ctx.channel.id == cfg.channels["lobby"]:
                         await disp.WRONG_COMMAND_JOIN_MATCH.send(ctx, ctx.command.name)
                         return
                 # Send the use back to the right channel
