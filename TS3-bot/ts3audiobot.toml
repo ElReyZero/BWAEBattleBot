@@ -8,13 +8,13 @@
 #You can set this field manually if you already have a preexisting group the bot should add himself to.
 bot_group_id = 0
 #Tries to fetch a cover image when playing.
-generate_status_avatar = true
+generate_status_avatar = false
 #Sets the description of the bot to the current song title.
-set_status_description = true
+set_status_description = false
 #The language the bot should use to respond to users. (Make sure you have added the required language packs)
 language = "en"
 #Starts the instance when the TS3AudioBot is launched.
-run = false
+run = true
 
 [bot.commands]
 #Defines how the bot tries to match your !commands. Possible types:
@@ -50,7 +50,7 @@ channel = "/130"
 #The client badges. You can set a comma seperated string with max three GUID's. Here is a list: http://yat.qa/ressourcen/abzeichen-badges/
 badges = ""
 #Client nickname when connecting.
-name = "BWAE Battle Bot 1"
+name = "TS3AudioBot"
 
 [bot.connect.identity]
 #||| DO NOT MAKE THIS KEY PUBLIC ||| The client identity. You can import a teamspeak3 identity here too.
@@ -89,9 +89,9 @@ send_mode = "!whisper subscription"
 
 [bot.history]
 #Enable or disable history features completely to save resources.
-enabled = true
+enabled = false
 #Whether or not deleted history ids should be filled up with new songs.
-fill_deleted_ids = true
+fill_deleted_ids = false
 
 [bot.events]
 #Called when the bot is connected.

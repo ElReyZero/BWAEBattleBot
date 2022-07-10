@@ -195,7 +195,9 @@ class AllStrings(Enum):
     CAP_NEW = Message("{} is the new captain for {}!", ping=False)
     CAP_NOT_OK = Message("Can't make {} a captain!", ping=False)
 
-    MATCH_DM_PING = Message("Match {} is starting! Please join `{}` channel in the BWAE Discord!", ping=False)
+    MATCH_DM_PING = Message("Match {} is starting! Please join `{}` channel in the BWAE Discord!\n{}", ping=False)
+    DM_REMOVED = Message("You will no longer receive a DM when a match is starting")
+    DM_ADDED = Message("You will now receive a DM when a match is starting!")
     MATCH_INIT = Message("{}\nMatch is ready, starting team selection...")
     MATCH_SHOW_PICKS = Message("Captains have been selected, {} choose a player", embed=embeds.team_update, ping=False)
     MATCH_BASE_AUTO = Message("Match will be on **{}**", ping=False)

@@ -20,7 +20,7 @@ class AudioBot(Plugin):
         try:
             self.num = cfg.channels["matches"].index(match.channel.id) + 1
         except ValueError:
-            self.num = 3
+            self.num = 4
         self.lobby = False
         if not cfg.ts['url']:
             raise PluginDisabled("Empty URL in config file!")
@@ -31,8 +31,8 @@ class AudioBot(Plugin):
         _TaskAudio(self).task_audio.start(audio_string, lobby=True, wait=0)
 
     def on_captains_selected(self):
-        # 1v1s channel is num3
-        if self.num != 3:
+        # 1v1s channel is num4
+        if self.num != 4:
             _TaskAudio(self).task_audio.start("select_teams", lobby=False)
 
     def on_teams_done(self):

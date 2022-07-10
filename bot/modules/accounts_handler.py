@@ -277,7 +277,7 @@ async def send_account(channel: discord.TextChannel, a_player: classes.ActivePla
     """
     msg = None
     # Try 3 times to send a DM:
-    ctx = a_player.account.get_new_context(ContextWrapper.user(a_player.id))
+    ctx = a_player.account.get_new_context(await ContextWrapper.user(a_player.id))
     for _ in range(3):
         try:
             msg = await disp.ACC_UPDATE.send(ctx, account=a_player.account)
@@ -320,7 +320,7 @@ async def terminate_account(a_player: classes.ActivePlayer):
     # If account was validated, ask the player to log off:
     try:
         if acc.is_validated and acc.message[0].channel.id != cfg.channels["staff"]:
-            await disp.ACC_OVER.send(ContextWrapper.user(acc.a_player.id))
+            await disp.ACC_OVER.send(await ContextWrapper.user(acc.a_player.id))
     except AttributeError:
         pass
 
@@ -425,103 +425,3 @@ def get_not_validated_accounts(team: classes.Team) -> list:
             not_ready.append(p)
     return not_ready
 
-#######################################################################################################################
-# Original functions made to work with MongoDB
-# Remove the previous functions and use the new ones instead if you're using mongodb for account handling
-# Remove the 'mongo_' prefix from the function names if you're using them
-
-async def mongo_give_account(a_player: classes.ActivePlayer) -> bool:
-    """
-    Give an account to a_player. We want each player to use as little accounts as possible.
-    So we try to give an account the player already used.
-    :param a_player: Player to give account to.
-    :return: True is account given, False if not enough accounts available.
-    """
-    # Get player usages
-    unique_usages = await db.async_db_call(db.get_field, "accounts_usage", a_player.id, "unique_usages")
-    if not unique_usages:
-        unique_usages = list()
-
-    # Set player usages in the player object
-    a_player.unique_usages = unique_usages
-
-    # If no available accounts, quit
-    if len(_available_accounts) == 0:
-        return False
-
-    # STEP 1.A: Check for accounts the player already used by the past
-    potential = list()
-    for acc_id in unique_usages:
-        if acc_id in _available_accounts:
-            potential.append(_available_accounts[acc_id])
-
-    # STEP 1.B: Give the account with the biggest usages amongst the accounts found in 1.A
-    if potential:
-        max_obj = potential[0]
-        max_value = max_obj.nb_unique_usages
-        # Find max
-        for acc in potential:
-            n_usages = acc.nb_unique_usages
-            if n_usages > max_value:
-                max_obj = acc
-                max_value = n_usages
-        # Give account, return ok
-        _set_account(max_obj, a_player)
-        return True
-
-    # STEP 2: If we couldn't find an account the player already used, give him the account with the least usages
-    min_obj = list(_available_accounts.values())[0]
-    min_value = min_obj.nb_unique_usages
-    # Find min
-    for acc in _available_accounts.values():
-        n_usages = acc.nb_unique_usages
-        if n_usages < min_value:
-            min_obj = acc
-            min_value = n_usages
-    # Give account, return ok
-    _set_account(min_obj, a_player)
-    return True
-
-
-async def mongo_terminate_account(a_player: classes.ActivePlayer):
-    """
-    Terminate the account: ask the user to log off and remove the reaction.
-    :param a_player: Player whose account should be terminated.
-    """
-    # Get account and terminate it
-    acc = a_player.account
-    acc.terminate()
-
-    # Remove the reaction handler and update the account message
-    await disp.ACC_UPDATE.edit(acc.message, account=acc)
-
-    # If account was validated, ask the player to log off:
-    if acc.is_validated and acc.message.channel.id != cfg.channels["staff"]:
-        await disp.ACC_OVER.send(ContextWrapper.user(acc.a_player.id))
-
-    # If account was validated, update the db with usage
-    if acc.is_validated:
-        # Prepare data
-        p_usage = {
-            "id": acc.id,
-            "time_start": acc.last_usage["time_start"],
-            "time_stop": acc.last_usage["time_stop"],
-            "match_id": a_player.match.id
-        }
-        # Update the account element
-        await db.async_db_call(db.push_element, "accounts_usage", acc.id, {"usages": acc.last_usage})
-        try:
-            # Update the player element
-            await db.async_db_call(db.push_element, "accounts_usage", a_player.id, {"usages": p_usage})
-        except db.DatabaseError:
-            # If the player element doesn't exist, create it
-            data = dict()
-            data["_id"] = a_player.id
-            data["unique_usages"] = a_player.unique_usages
-            data["usages"] = [p_usage]
-            await db.async_db_call(db.set_element, "accounts_usage", a_player.id, data)
-
-    # Reset the account state
-    acc.clean()
-    del _busy_accounts[acc.id]
-    _available_accounts[acc.id] = acc

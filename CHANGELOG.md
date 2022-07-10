@@ -1,5 +1,8 @@
 # v4.2:
 - Added a training mode and more admin commands
+- Benched players are no longer mentioned when match is starting/ending
+- Timeout message no longer appears twice in some occasions
+- Added =dm to receive a direct message when a match is starting
 # v4.1:
 - Bunch of QOL improvements to the bot, added admin only commands
 # v4.0:

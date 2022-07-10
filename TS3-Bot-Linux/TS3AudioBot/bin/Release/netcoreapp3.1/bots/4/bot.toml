@@ -7,7 +7,7 @@ run = true
 
 [connect]
 #Client nickname when connecting.
-name = "BWAE Battle Bot 2"
+name = "BWAE Battle Bot 4"
 #The server password. Leave empty for none.
 server_password = {  }
 #The default channel password. Leave empty for none.
@@ -17,9 +17,9 @@ client_version = {  }
 
 [connect.identity]
 #||| DO NOT MAKE THIS KEY PUBLIC ||| The client identity. You can import a teamspeak3 identity here too.
-key = "MCoDAgbAAgEgAiEAsDB4gvhINvIsbb4cWe349UqrMXFctOPcsh3TdzjwbGs="
+key = "MCkDAgbAAgEgAiAK3LcWMwjy5t1tlPVnTBD1lepNq3LaN5XT0PUgu7MY6g=="
 #The client identity offset determining the security level.
-offset = 560
+offset = 308
 
 [reconnect]
 

@@ -54,10 +54,6 @@ ADD TS3-Bot-Linux/TS3AudioBot/bin/Release/netcoreapp3.1/rights.toml /home/bwae-s
 ADD TS3-Bot-Linux/TS3AudioBot/bin/Release/netcoreapp3.1/ts3audiobot.toml /home/bwae-services/TS3AudioBot/TS3AudioBot/bin/Release/netcoreapp3.1/linux-x64/ts3audiobot.toml
 ADD TS3-Bot-Linux/TS3AudioBot/bin/Release/netcoreapp3.1/bots /home/bwae-services/TS3AudioBot/TS3AudioBot/bin/Release/netcoreapp3.1/linux-x64/bots
 ADD TS3-Bot-Linux/TS3AudioBot/bin/Release/netcoreapp3.1/audio /home/bwae-services/TS3AudioBot/TS3AudioBot/bin/Release/netcoreapp3.1/linux-x64/audio
-#ADD TS3-Bot-Linux/TS3AudioBot/bin/Release/netcoreapp3.1/rights.toml rights.toml
-#ADD TS3-Bot-Linux/TS3AudioBot/bin/Release/netcoreapp3.1/ts3audiobot.toml ts3audiobot.toml
-#ADD TS3-Bot-Linux/TS3AudioBot/bin/Release/netcoreapp3.1/bots bots
-#ADD TS3-Bot-Linux/TS3AudioBot/bin/Release/netcoreapp3.1/audio audio
 ADD CHANGELOG.md /home/bwae-services/CHANGELOG.md
 ADD LICENSE.md /home/bwae-services/LICENSE.md
 ADD README.md /home/bwae-services/README.md

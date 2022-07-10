@@ -36,7 +36,7 @@
 	# And/Or your admin Client Uids here
 	useruid = [ "" ]
 	# By default treat requests from localhost as admin
-	ip = [ "::1:127.0.0.1", "::1", "127.0.0.1", "::ffff:127.0.0.1"]
+	ip = [ "::1:127.0.0.1", "::1", "127.0.0.1", "::ffff:127.0.0.1", "172.16.2.1", "::ffff:172.18.0.1", "172.18.0.1", "::ffff:172.17.0.1"]
 
 	"+" = "*"
 

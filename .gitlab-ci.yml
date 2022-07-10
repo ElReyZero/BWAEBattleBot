@@ -48,6 +48,7 @@ bwae-battle-bot-ts-cleanup:
   tags:
     - bwae-services
   only:
+    - master
     - ts-bot
   script:
     - docker stop bwae-battle-bot-ts
