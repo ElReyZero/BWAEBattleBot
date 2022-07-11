@@ -271,6 +271,7 @@ def _start_match_from_full_lobby(training=False):
         _set_lobby_stuck(False)
         if training:
             match.spin_up(_training_list.copy(), training=True)
+            _training_list.clear()
         else:
             match.spin_up(_lobby_list.copy())
         _lobby_list.clear()
@@ -320,3 +321,6 @@ def clear_training_lobby():
     _clear_warned()
     _on_lobby_remove()
     return True
+
+def get_training_list_size():
+    return len(_training_list)

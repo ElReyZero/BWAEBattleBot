@@ -87,6 +87,7 @@ def lobby_help(ctx):
                           '`=reset` (`=rst`)  - Reset your queue timeout\n'
                           '`=info` (`=i`)  - Display the global information prompt\n'
                           '`=join1v1` (`=join1v1`) - Join a current 1v1 match (Can only be used in the match channels)\n'
+                          '`=joinTraining` (`=joinTr` or `=letmein`) - Join a current 1v1 match (Can only be used in the match channels)\n'
                           '`=lobbysize` (`=lbsize`) - Change the lobby size\n'
                           '`=rndtime` - Change the amount of time in a match round\n'
                           '`=training` - Configure the next training match\n'
@@ -100,8 +101,8 @@ def lobby_help(ctx):
                                 '`=channel freeze`/`unfreeze` - Prevent / Allow players to send messages\n'
                                 '`=lobby save`/`get`/`restore` - Will save, get or restore the lobby from player IDs\n'
                                 '`=forcestart` (`=fstart`) - Force start a match with current people in lobby\n'
-                                '`=trainingstart` (`=tstart`) - Force start a training match with current people in lobby'
-                                ,
+                                '`=trainingstart` (`=tstart`) - Force start a training match with current people in lobby\n'
+                                '`=variables` (`=variables`) - Display the current status of the bot\'s global variables',
                             inline=False)
     except AttributeError:
         pass

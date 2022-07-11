@@ -78,6 +78,9 @@ def _add_main_handlers(client):
                 return
             await disp.INVALID_COMMAND.send(ctx)
             return
+        if isinstance(error, commands.errors.MissingRequiredArgument):  # Missing argument
+            await disp.MISSING_ARGUMENT.send(ctx, ctx.command.name)
+            return
         if isinstance(error, commands.errors.CheckFailure):  # Unauthorized command
             cog_name = ctx.command.cog.qualified_name
             if cog_name == "admin":

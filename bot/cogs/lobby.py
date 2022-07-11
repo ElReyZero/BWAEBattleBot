@@ -248,7 +248,7 @@ class LobbyCog(commands.Cog, name='lobby'):
         names = lobby.add_to_1v1_lobby(player)
         await disp.LB_ADDED_1v1.send(ctx, names_in_lobby=names)
 
-    @commands.command(aliases=['straining', 'training', 'trainingconfig'])
+    @commands.command(aliases=['trconfig', 'training', 'trainingconfig'])
     async def training_config(self, ctx):
         if lobby._training_unlocked:
             await disp.TRAINING_ALREADY_CONFIGURED.send(ctx)
@@ -261,24 +261,26 @@ class LobbyCog(commands.Cog, name='lobby'):
                     return
             except TimeoutError:
                 await disp.CONFIG_TIMEOUT.send(ctx)
-                return
-
+                return       
         ih = interactions.InteractionHandler(None, views.training_config, disable_after_use=True)
         _add_ih_callback(ih, ctx)
         ctx = ih.get_new_context(ctx)
         await disp.TRAINING_CONFIG.send(ctx)
 
-    @commands.command(aliases=["jointraining", "tr", "jtraining", "jtr"])
+    @commands.command(aliases=["tr"])
     @commands.guild_only()
     async def queueTraining(self, ctx):
         if not lobby._training_unlocked:
-            await disp.TRAINING_NOT_UNLOCKED.send(ctx)
-            return
-        player = Player.get(ctx.message.author.id)
-        if not await check_join_queue(player, ctx, False):
-            return
-        names = lobby.add_to_lobby(player, training=True)
-        await disp.LB_ADDED_TRAINING.send(ctx, names_in_lobby=names)
+            ih = interactions.InteractionHandler(None, views.training_config, disable_after_use=True)
+            _add_ih_callback(ih, ctx)
+            ctx = ih.get_new_context(ctx)
+            await disp.TRAINING_CONFIG.send(ctx)
+        else:
+            player = Player.get(ctx.message.author.id)
+            if not await check_join_queue(player, ctx, False):
+                return
+            names = lobby.add_to_lobby(player, training=True)
+            await disp.LB_ADDED_TRAINING.send(ctx, names_in_lobby=names)
 
 def setup(client):
     client.add_cog(LobbyCog(client))
