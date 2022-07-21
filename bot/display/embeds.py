@@ -18,13 +18,13 @@ def global_variables_display(ctx):
     embed.add_field(name="Lobby Size",
                     value=f'{cfg.general["lobby_size"]} players',
                     inline=False)
-    embed.add_field(name="Training Lobby Size",
+    embed.add_field(name="Fight Club/Training Lobby Size",
                     value=f'{cfg.general["training_lobby_size"]} players',
                     inline=False)
     embed.add_field(name="TDM Round Length",
                     value=f'{cfg.general["round_length"]} minutes',
                     inline=False)
-    embed.add_field(name="Training Rounds Configured",
+    embed.add_field(name="Fight Club/Training Rounds Configured",
                     value=f'{cfg.general["training_rounds"]} rounds',
                     inline=False)
     embed.add_field(name="Practice Accounts Role Check",
@@ -32,6 +32,9 @@ def global_variables_display(ctx):
                     inline=False)
     embed.add_field(name="Show player scores check",
                     value=f'Player scores are enabled\nValue: {cfg.general["show_player_scores"]}' if cfg.general["show_player_scores"] else f'Player scores are hidden.\nValue: {cfg.general["show_player_scores"]}',
+                    inline=False)
+    embed.add_field(name="Max amount of players in a 1v1",
+                    value=f'Max amount of players is enabled\nValue: {cfg.general["max_players_1v1"]}' if cfg.general["max_players_1v1"] else f'Max amount of players is disabled.\nValue: {cfg.general["max_players_1v1"]}',
                     inline=False)
     return embed
     
@@ -87,12 +90,20 @@ def lobby_help(ctx):
                           '`=reset` (`=rst`)  - Reset your queue timeout\n'
                           '`=info` (`=i`)  - Display the global information prompt\n'
                           '`=join1v1` (`=join1v1`) - Join a current 1v1 match (Can only be used in the match channels)\n'
-                          '`=joinTraining` (`=joinTr` or `=letmein`) - Join a current 1v1 match (Can only be used in the match channels)\n'
+                          '`=joinTraining` (`=joinTr` or `=letmein`) - Join a current training match (Can only be used in the match channels)\n'
+                          '`=joinFightClub` (`=joinFC` or `=letmein`) - Join a current fight club match (Can only be used in the match channels)\n' 
                           '`=lobbysize` (`=lbsize`) - Change the lobby size\n'
                           '`=rndtime` - Change the amount of time in a match round\n'
-                          '`=training` - Configure the next training match\n'
-                          '`=tr` - Join the training queue',
+                          '`=trconfig` - Configure the next training match\n'
+                          '`=tr` - Join the training queue\n'
+                          '`=fcconfig` - Configure the next fight club match\n'
+                          '`=fc` - Join the fight club queue',
                     inline=False)
+    embed.add_field(name='Lobby timeout',
+                value='You can specify a duration when using the `join` or `leave` commands (only for TDM):\n'
+                        '`=join 30 minutes` (`=j 30m`) will automatically remove you from the queue after 30 minutes\n'
+                        '`=leave 1 hour 20` (`=l 1h20`) will automatically remove you from the queue after 1 hour 20',
+                inline=False)
     try:
         if is_admin(ctx.author):
             embed.add_field(name="Staff commands",
@@ -101,7 +112,8 @@ def lobby_help(ctx):
                                 '`=channel freeze`/`unfreeze` - Prevent / Allow players to send messages\n'
                                 '`=lobby save`/`get`/`restore` - Will save, get or restore the lobby from player IDs\n'
                                 '`=forcestart` (`=fstart`) - Force start a match with current people in lobby\n'
-                                '`=trainingstart` (`=tstart`) - Force start a training match with current people in lobby\n'
+                                '`=trainingstart` (`=trstart`) - Force start a training match with current people in lobby\n'
+                                '`=fightclubstart` (`=fcstart`) - Force start a fight club match with current people in lobby\n'
                                 '`=variables` (`=variables`) - Display the current status of the bot\'s global variables',
                             inline=False)
     except AttributeError:
@@ -414,7 +426,7 @@ def lobby_list_training(ctx, names_in_lobby):
     list_of_names = "\n".join(names_in_lobby)
     if list_of_names == "":
         list_of_names = "Queue is empty"
-    embed.add_field(name=f'Training Lobby: {len(names_in_lobby)} / {cfg.general["training_lobby_size"]}', value=list_of_names,
+    embed.add_field(name=f'Fight Club/Training Lobby: {len(names_in_lobby)} / {cfg.general["training_lobby_size"]}', value=list_of_names,
                     inline=False)
     return embed
 
@@ -441,7 +453,7 @@ def offline_list(ctx, p_list):
     return embed
 
 
-def global_info(ctx, lobby, lobby1v1, match_list):
+def global_info(ctx, lobby, lobby1v1, lobby_training, match_list):
     embed = Embed(
         colour=Color.greyple(),
         title='Global Info',
@@ -449,8 +461,10 @@ def global_info(ctx, lobby, lobby1v1, match_list):
     )
     lb_embed = lobby_list(ctx, names_in_lobby=lobby).fields[0]
     lb_1v1_embed = lobby_list_1v1(ctx, names_in_lobby=lobby1v1).fields[0]
+    lb_training_embed = lobby_list_training(ctx, names_in_lobby=lobby_training).fields[0]
     embed.add_field(name=lb_embed.name, value=lb_embed.value, inline=lb_embed.inline)
     embed.add_field(name=lb_1v1_embed.name, value=lb_1v1_embed.value, inline=lb_1v1_embed.inline)
+    embed.add_field(name=lb_training_embed.name, value=lb_training_embed.value, inline=lb_training_embed.inline)
     for m in match_list:
         desc = ""
         if m.status is MatchStatus.IS_FREE:

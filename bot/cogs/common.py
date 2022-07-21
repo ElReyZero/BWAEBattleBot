@@ -28,7 +28,7 @@ class MatchesCog(commands.Cog, name='common'):
                 match_list.append(Match.get(ch))
             for ch in cfg.channels["matches1v1"]:
                 match_list.append(Match.get(ch))
-            await disp.GLOBAL_INFO.send(ctx, lobby=lobby.get_all_names_in_lobby(), lobby1v1=lobby.get_all_1v1_names_in_lobby(), match_list=match_list)
+            await disp.GLOBAL_INFO.send(ctx, lobby=lobby.get_all_names_in_lobby(), lobby1v1=lobby.get_all_1v1_names_in_lobby(), lobby_training=lobby.get_all_names_in_training_lobby(), match_list=match_list)
             return
 
         if ctx.channel.id in cfg.channels["matches"] or ctx.channel.id in cfg.channels["matches1v1"]:

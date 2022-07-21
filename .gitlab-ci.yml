@@ -25,21 +25,10 @@ bwae-battle-bot-lobby-test:
   only:
     - lobby-bot
   script:
-    - docker build . -f bwae-battle-bot-lobby.Dockerfile -t --no-cache bwae/bwae-battle-bot-lobby-test:latest
+    - docker build . -f bwae-battle-bot-lobby.Dockerfile -t bwae/bwae-battle-bot-lobby-test:latest
     - docker tag bwae/bwae-battle-bot-lobby-test:latest localhost:5000/bwae-battle-bot-lobby-test
     - docker push localhost:5000/bwae-battle-bot-lobby-test
     - docker run --name bwae-battle-bot-lobby-test localhost:5000/bwae-battle-bot-lobby-test:latest
-
-bwae-battle-bot-lobby-cleanup:
-  stage: clean
-  allow_failure: true
-  tags:
-    - bwae-services
-  only:
-    - master
-  script:
-    - docker stop bwae-battle-bot-lobby
-    - docker rm bwae-battle-bot-lobby
 
 
 bwae-battle-bot-ts-cleanup:
@@ -48,7 +37,6 @@ bwae-battle-bot-ts-cleanup:
   tags:
     - bwae-services
   only:
-    - master
     - ts-bot
   script:
     - docker stop bwae-battle-bot-ts

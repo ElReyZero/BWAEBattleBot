@@ -128,7 +128,8 @@ class MatchPlaying(Process, status=MatchStatus.IS_STARTING):
         except ApiNotReachable as e:
             log.error(f"ApiNotReachable caught when processing scores : {e.url}")
             await disp.API_SCORE_ERROR.send(ContextWrapper.channel(cfg.channels["results"]), int(self.match.id), round_no)
-        lobby._training_unlocked = False
+        if self.isTraining:
+            lobby._training_unlocked = False
         self.match.start_next_process()
 
     @Process.public

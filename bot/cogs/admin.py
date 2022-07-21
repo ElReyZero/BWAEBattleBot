@@ -146,14 +146,27 @@ class AdminCog(commands.Cog, name='admin'):
     @commands.command()
     @commands.guild_only()
     async def check(self, ctx, *args):
-        if ctx.channel.id == cfg.channels["staff"] and (args[0] == "scores" or args[0] == "score"):
-            if cfg.general["show_player_scores"]:
-                cfg.general["show_player_scores"] = False
-                await disp.SCORES_DISABLED.send(ctx)
-                return
+        if ctx.channel.id == cfg.channels["staff"]:
+            if args[0] == "scores" or args[0] == "score":
+                if cfg.general["show_player_scores"]:
+                    cfg.general["show_player_scores"] = False
+                    await disp.SCORES_DISABLED.send(ctx)
+                    return
+                else:
+                    cfg.general["show_player_scores"] = True
+                    await disp.SCORES_ENABLED.send(ctx)
+                    return
+            elif args[0] == "full1v1":
+                if cfg.general["max_players_1v1"]:
+                    cfg.general["max_players_1v1"] = False
+                    await disp.FULL1V1_DISABLED.send(ctx)
+                    return
+                else:
+                    cfg.general["max_players_1v1"] = True
+                    await disp.FULL1V1_ENABLED.send(ctx)
+                    return
             else:
-                cfg.general["show_player_scores"] = True
-                await disp.SCORES_ENABLED.send(ctx)
+                await disp.INVALID_STR.send(ctx, args)
                 return
 
         if ctx.channel.id == cfg.channels['register']:
@@ -422,7 +435,7 @@ class AdminCog(commands.Cog, name='admin'):
             return
         await disp.LB_FORCED_MATCH_START.send(ctx)
 
-    @commands.command(aliases=["trstart", "trainingStart", "trainingstart", "trs"])
+    @commands.command(aliases=["trstart", "trainingStart", "trainingstart", "trs", 'fcstart', 'fightclubStart, fightclubstart'])
     @commands.guild_only()
     async def training_force_start(self, ctx):
         if ctx.channel.id != cfg.channels["lobby"]:

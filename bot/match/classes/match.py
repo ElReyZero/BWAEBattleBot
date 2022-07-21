@@ -192,6 +192,11 @@ class Match:
             return
 
         team_list = [tm.get_data() for tm in teams]
+        team_sizes = [len(tm.players) for tm in teams]
+        if team_sizes == [2,2] and cfg.general["max_players_1v1"] and self.is1v1:
+            await disp.CANNOT_JOIN_FULL_1V1.send(ctx)
+            return
+
         cfg.join_factions["faction1"] = team_list[0]["faction_id"]
         cfg.join_factions["faction2"] = team_list[1]["faction_id"]
         ih = interactions.InteractionHandler(None, v.joinCurrentMatch_buttons, disable_after_use=False)

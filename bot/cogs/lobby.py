@@ -1,13 +1,12 @@
 # @CHECK 2.0 features OK
 
 from discord.ext import commands
-from discord import Status as discord_status
 from logging import getLogger
 from match.classes.match import Match
 from asyncio import TimeoutError
-from display import AllStrings as disp, views, ContextWrapper
+from display import AllStrings as disp, views
 import modules.config as cfg
-
+from modules import tools
 from classes import Player
 
 import modules.interactions as interactions
@@ -100,7 +99,7 @@ class LobbyCog(commands.Cog, name='lobby'):
 
     @commands.command(aliases=['j'])
     @commands.guild_only()
-    async def join(self, ctx):
+    async def join(self, ctx, *args):
         """ Join queue
         """
         if lobby.get_lobby_len() > cfg.general["lobby_size"]:  # This should not happen EVER
@@ -117,17 +116,27 @@ class LobbyCog(commands.Cog, name='lobby'):
         if len(accs) != 0:
             await disp.CHECK_ACCOUNT.send(ctx, cfg.channels["register"], account_names=accs)
             return
-        if player.is_lobbied:
-            await disp.LB_ALREADY_IN.send(ctx)
-            return
         if player.match:
             await disp.LB_IN_MATCH.send(ctx)
             return
+
+        time = await check_time(ctx, args)
+        if time < 0:
+            return
+
+        if player.is_lobbied:
+            if time == 0:
+                await disp.LB_ALREADY_IN.send(ctx)
+            else:
+                player.lobby_expiration = time
+                await disp.LB_TIMEOUT_OK.send(ctx, names_in_lobby=lobby.get_all_names_in_lobby())
+            return
+            
         if lobby.is_lobby_stuck():
             await disp.LB_STUCK_JOIN.send(ctx)
             return
 
-        names = lobby.add_to_lobby(player)
+        names = lobby.add_to_lobby(player, expiration=time)
         await disp.LB_ADDED.send(ctx, names_in_lobby=names)
 
     @commands.command(aliases=['rst'])
@@ -140,11 +149,11 @@ class LobbyCog(commands.Cog, name='lobby'):
             await disp.LB_NOT_IN.send(ctx)
             return
         lobby.reset_timeout(player)
-        await disp.LB_REFRESHED.send(ctx)
+        await disp.LB_REFRESHED.send(ctx, names_in_lobby=lobby.get_all_names_in_lobby())
 
     @commands.command(aliases=['l'])
     @commands.guild_only()
-    async def leave(self, ctx):
+    async def leave(self, ctx, *args):
         """ Leave queue
         """
         player = Player.get(ctx.message.author.id)
@@ -152,17 +161,25 @@ class LobbyCog(commands.Cog, name='lobby'):
             await disp.LB_NOT_IN.send(ctx)
             return
         if player.is_lobbied:
-            is1v1, isTraining = lobby.remove_from_lobby(player)
-            if is1v1:
-                ih = interactions.InteractionHandler(None, views.join1v1queue, disable_after_use=False)
-                _add_ih_callback(ih, ctx)
-                ctx = ih.get_new_context(ctx)
-                await disp.LB_REMOVED_1v1.send(ctx, names_in_lobby=lobby.get_all_1v1_names_in_lobby())
-            elif isTraining:
-                await disp.LB_REMOVED_TRAINING.send(ctx, names_in_lobby=lobby.get_all_names_in_training_lobby())
+            time = await check_time(ctx, args)
+            if time < 0:
+                return
+            elif time == 0:
+                is1v1, isTraining = lobby.remove_from_lobby(player)
+                if is1v1:
+                    ih = interactions.InteractionHandler(None, views.join1v1queue, disable_after_use=False)
+                    _add_ih_callback(ih, ctx)
+                    ctx = ih.get_new_context(ctx)
+                    await disp.LB_REMOVED_1v1.send(ctx, names_in_lobby=lobby.get_all_1v1_names_in_lobby())
+                elif isTraining:
+                    await disp.LB_REMOVED_TRAINING.send(ctx, names_in_lobby=lobby.get_all_names_in_training_lobby())
+                else:
+                    await disp.LB_REMOVED.send(ctx, names_in_lobby=lobby.get_all_names_in_lobby())
+                return
             else:
-                await disp.LB_REMOVED.send(ctx, names_in_lobby=lobby.get_all_names_in_lobby())
-            return
+                player.lobby_expiration = time
+                await disp.LB_TIMEOUT_OK.send(ctx, names_in_lobby=lobby.get_all_names_in_lobby())
+                return
         
         await disp.LB_NOT_IN.send(ctx)
 
@@ -199,7 +216,7 @@ class LobbyCog(commands.Cog, name='lobby'):
             await disp.WRONG_TYPE_ARGS.send(ctx)
             return
 
-    @commands.command(aliases=['trsize','trainingsize'])
+    @commands.command(aliases=['trsize','trainingsize', 'fcsize', 'fightclubsize'])
     @commands.guild_only()
     async def changeTrainingSize(self, ctx, size):
         """Change the lobby size
@@ -248,7 +265,7 @@ class LobbyCog(commands.Cog, name='lobby'):
         names = lobby.add_to_1v1_lobby(player)
         await disp.LB_ADDED_1v1.send(ctx, names_in_lobby=names)
 
-    @commands.command(aliases=['trconfig', 'training', 'trainingconfig'])
+    @commands.command(aliases=['trconfig', 'training', 'trainingconfig', 'fcconfig'])
     async def training_config(self, ctx):
         if lobby._training_unlocked:
             await disp.TRAINING_ALREADY_CONFIGURED.send(ctx)
@@ -267,7 +284,7 @@ class LobbyCog(commands.Cog, name='lobby'):
         ctx = ih.get_new_context(ctx)
         await disp.TRAINING_CONFIG.send(ctx)
 
-    @commands.command(aliases=["tr"])
+    @commands.command(aliases=["tr", 'fc', 'fightclub', 'fightClub'])
     @commands.guild_only()
     async def queueTraining(self, ctx):
         if not lobby._training_unlocked:
@@ -284,3 +301,19 @@ class LobbyCog(commands.Cog, name='lobby'):
 
 def setup(client):
     client.add_cog(LobbyCog(client))
+
+async def check_time(ctx, args):
+    if args:
+        arg = " ".join(args)
+        time = tools.time_calculator(arg, default="minutes")
+        if time == 0:
+            await disp.LB_TIME_INVALID.send(ctx, arg)
+            return -1
+        if time < 300:
+            await disp.LB_TIME_TOO_SHORT.send(ctx)
+            return -1
+        if time > 7200:
+            await disp.LB_TIME_TOO_LONG.send(ctx)
+            return -1
+        return time
+    return 0

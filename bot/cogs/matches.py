@@ -39,7 +39,7 @@ class MatchesCog(commands.Cog, name='matches'):
         else:
             await disp.WRONG_CHANNEL_2.send(ctx, ctx.command.name, f"<#{ctx.channel.id}>")  
     
-    @commands.command(aliases=["join1v1", "j1v1", "joinTraining", "joinTr", "letmein"])
+    @commands.command(aliases=["join1v1", "j1v1", "joinTraining", "joinTr", "letmein", 'joinFightClub', 'joinFC', 'joinfc', 'jfc', 'joinfightclub'])
     @commands.guild_only()
     async def joinMatch(self, ctx):
         player = Player.get(ctx.message.author.id)
