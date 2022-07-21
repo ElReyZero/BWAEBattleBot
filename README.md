@@ -66,8 +66,16 @@ Pymongo is used for interaction with the mongodb. The database should contain se
 - One for the matches.
 - One for the player stats
 - One for persistent restart data
-- One for jaeger account usage
-Check `script.py` to populate the databases.
+- One for jaeger account usage  
+
+Check `script.py` to populate the databases and insert the following document into the restart data collection before running the bot for the first time: 
+```json
+{
+    "_id":0,
+    "last_match_id":0,
+    "last_lobby":[]
+}
+```
 The naming of these collections can be configured at the `[Collections]` part of the configuration file.
 
 There are two common ways to get MongoDB running: [Atlas](#Atlas) and [Manual Deployment](#manual-deployment).
