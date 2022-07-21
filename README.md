@@ -21,6 +21,7 @@ And more...
 - A [discord bot application and channels](#discord-bot-component) have to be created.
 - A [MongoDB database](#preparing-mongodb-component) is used for persistent data storage.
 - An [Elasticsearch] component is used for account handling (The MongoDB database can be used for this as well)
+- By default, the mongo database will be used for accounts usage. If you want to use the elasticsearch component, you need to delete `bot/modules/accounts_handler.py` and rename `accounts_handler_es.py` to `accounts_handler.py`. 
 - Jaeger accounts are pulled from a [Google Sheet](#preparing-google-component). 
 - To retrieve Planetside2 information a [Daybreak Census ID](#assigning-census-id) has to be provided.
 - To use the TeamSpeak 3 Integration, set up an instance of [TS3AudioBot](#teamspeak-integration).
