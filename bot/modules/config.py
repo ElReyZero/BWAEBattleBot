@@ -136,7 +136,8 @@ general = {
     "no_account_role": False,
     "no_account_allowed_roles": list(),
     "show_player_scores": True,
-    "training_rounds":0
+    "training_rounds":0,
+    "max_players_1v1": True
 }
 
 #: Contains TS3 parameters.

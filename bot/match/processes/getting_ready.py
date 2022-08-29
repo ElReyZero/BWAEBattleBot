@@ -1,5 +1,3 @@
-import discord
-
 from match import MatchStatus
 
 from display import AllStrings as disp, ContextWrapper, views
@@ -10,8 +8,9 @@ from match.common import after_pick_sub
 
 import modules.accounts_handler as accounts
 import modules.census as census
+from datetime import datetime
 import match.classes.interactions as interactions
-
+from lib.tasks import loop
 from modules.asynchttp import ApiNotReachable
 
 log = getLogger("pog_bot")
@@ -45,8 +44,19 @@ class GettingReady(Process, status=MatchStatus.IS_WAITING):
 
         super().__init__(match)
 
+    @loop(hours=1)
+    async def inactive_loop(self):
+        difference = datetime.now() - self.match.lastUpdated
+        difference = difference.total_seconds()
+        if divmod(difference, 3600)[0] >= 2:
+            await disp.INACTIVE_MATCH.send(self.match.channel)
+            log.info(f"Match {self.match.id} has been cleared due to inactivity")
+            await self.clear(self.match.channel)
+
     @Process.init_loop
     async def init(self):
+        self.match.lastUpdated = datetime.now()
+        self.match.loop = self.inactive_loop.start()
         if self.is_first_round:
             await disp.ACC_SENDING.send(self.match.channel)
 
@@ -77,6 +87,8 @@ class GettingReady(Process, status=MatchStatus.IS_WAITING):
     async def clear(self, ctx):
         self.ih.clean()
         await self.match.clean_all_auto()
+        if self.match.loop:
+            self.match.loop.cancel()
         await disp.MATCH_CLEARED.send(ctx)
 
     @Process.public
@@ -107,6 +119,7 @@ class GettingReady(Process, status=MatchStatus.IS_WAITING):
 
     @Process.public
     async def ready(self, ctx, captain):
+        self.match.lastUpdated = datetime.now()
         if not captain.is_turn:
             self.on_team_ready(captain.team, False)
             ctx = self.ih.get_new_context(ctx)
@@ -137,6 +150,7 @@ class GettingReady(Process, status=MatchStatus.IS_WAITING):
                 ctx = self.ih.get_new_context(ctx)
             await disp.MATCH_TEAM_READY.send(ctx, captain.team.name, match=self.match.proxy)
             if is_over:
+                self.match.loop.cancel()
                 self.match.start_next_process()
 
     @Process.public

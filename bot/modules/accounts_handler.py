@@ -10,14 +10,19 @@ from logging import getLogger
 from gspread import service_account
 from numpy import array
 import discord.errors
+from datetime import datetime, timedelta
+import time
+from classes.accounts import Account
+import copy
+import asyncio
 
 # Internal imports
 import classes
-from display import AllStrings as disp, ContextWrapper, views
+from display import AllStrings as disp, ContextWrapper
 import modules.database as db
 import modules.config as cfg
 from modules.tools import UnexpectedError
-
+import os
 
 log = getLogger("pog_bot")
 
@@ -38,7 +43,10 @@ def init(secret_file: str):
     :param secret_file: Name of the gspread authentication json file.
     """
     # Open the google sheet:
-    gc = service_account(filename=secret_file)
+    try:
+        gc = service_account(filename=secret_file)
+    except FileNotFoundError:
+        gc = service_account(filename=os.getcwd()+r"\bot\google_api_secret_test.json")
     sh = gc.open_by_key(cfg.database["accounts"])
     raw_sheet = sh.worksheet("1")
     sheet_tab = array(raw_sheet.get_all_values())
@@ -137,8 +145,16 @@ def _set_account(acc: classes.Account, a_player: classes.ActivePlayer):
     acc.add_usage(a_player.id, a_player.match.id)
     a_player.account = acc
 
+async def clearMatch(channel, ctx):
+    from match.classes.match import Match
+    await asyncio.sleep(10)
+    match = Match.get(channel.id)
+    db.set_field("restart_data", 0, {"last_match_id": Match._last_match_id-1})
+    await match.command.clear(ctx)
+    return
 
-async def send_account(channel: discord.TextChannel, a_player: classes.ActivePlayer):
+
+async def send_account(channel: discord.TextChannel, a_player: classes.ActivePlayer, is1v1):
     """
     Actually send its account to the player.
     :param channel: Current match channel.
@@ -147,7 +163,7 @@ async def send_account(channel: discord.TextChannel, a_player: classes.ActivePla
     msg = None
     # Try 3 times to send a DM:
     ctx = a_player.account.get_new_context(await ContextWrapper.user(a_player.id))
-    for j in range(3):
+    for _ in range(3):
         try:
             msg = await disp.ACC_UPDATE.send(ctx, account=a_player.account)
             break
@@ -157,10 +173,14 @@ async def send_account(channel: discord.TextChannel, a_player: classes.ActivePla
         # Else validate the account and send it to staff channel instead
         await disp.ACC_CLOSED.send(channel, a_player.mention)
         await a_player.account.validate()
-        msg = await disp.ACC_STAFF.send(ContextWrapper.channel(cfg.channels["staff"]),
-                                        f'<@&{cfg.roles["admin"]}>', a_player.mention, account=a_player.account)
+        if is1v1:
+            await disp.CLEARING_MATCH_NO_ACC.send(ContextWrapper.channel(channel.id), a_player.mention)
+            asyncio.get_event_loop().create_task(clearMatch(channel, ContextWrapper.channel(channel.id)))
+        else:
+            msg = await disp.ACC_STAFF.send(ContextWrapper.channel(cfg.channels["staff"]),
+                                            f'<@&{cfg.roles["admin"]}>', a_player.mention, account=a_player.account)
     # Set the account message, log the account:
-    a_player.account.message = msg
+    a_player.account.message = [msg]
     await disp.ACC_LOG.send(ContextWrapper.channel(cfg.channels["spam"]), a_player.name, a_player.id, a_player.account.id)
 
 
@@ -174,11 +194,19 @@ async def terminate_account(a_player: classes.ActivePlayer):
     acc.terminate()
 
     # Remove the reaction handler and update the account message
-    await disp.ACC_UPDATE.edit(acc.message, account=acc)
-
+    try:
+        await disp.ACC_UPDATE.edit(acc.message[0], account=acc)
+    except AttributeError:
+        pass
+    if len(acc.message) != 1:
+        for i in range(1,len(acc.message)):
+            await acc.message[i].delete()
     # If account was validated, ask the player to log off:
-    if acc.is_validated and acc.message.channel.id != cfg.channels["staff"]:
-        await disp.ACC_OVER.send(await ContextWrapper.user(acc.a_player.id))
+    try:
+        if acc.is_validated and acc.message[0].channel.id != cfg.channels["staff"]:
+            await disp.ACC_OVER.send(await ContextWrapper.user(acc.a_player.id))
+    except AttributeError:
+        pass
 
     # If account was validated, update the db with usage
     if acc.is_validated:

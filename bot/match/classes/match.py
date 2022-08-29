@@ -404,6 +404,8 @@ class MatchObjects:
         self.plugin_manager = None
         self.clean_channel.start(display=False)
         self.is1v1 = match.is1v1
+        self.lastUpdated = 0
+        self.loop = None
 
     def delayed_init(self):
         self.plugin_manager = PluginManager(self.proxy)

@@ -54,6 +54,7 @@ def _add_ih_callback(ih, ctx):
 
         if local_context is None:
             local_context = ctx
+        local_context.author = user
             
         if not await check_join_queue(player, local_context, True):
             return

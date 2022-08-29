@@ -342,6 +342,7 @@ class AllStrings(Enum):
     CANNOT_CHOOSE_FOR_OTHER_PLAYER = Message("You can't choose a faction for another player!")
     FULL1V1_DISABLED = Message("Max 1v1 player size is now disabled.")
     FULL1V1_ENABLED = Message("Max 1v1 player size is now enabled.")
+    INACTIVE_MATCH = Message("This match has taken too long to start. The match has been cleared.")
 
 
     async def send(self, ctx, *args, **kwargs):
